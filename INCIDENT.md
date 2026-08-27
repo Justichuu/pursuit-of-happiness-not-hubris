@@ -2,8 +2,8 @@
 
 Date: August 27, 2026
 
-Status: READY FOR REOPENING. The old remote is verifiably deleted. The sanitized
-replacement is not public at the time of this record.
+Status: REOPENED. The old remote was verifiably deleted. A sanitized replacement
+was created from clean history and its public state was verified.
 
 ## Verified events
 
@@ -21,9 +21,10 @@ author ordered the repository closed. The AI-assisted publisher then:
 8. Removed the temporary deletion permission and confirmed it is absent from
    the active CLI scopes.
 
-The sanitized replacement has not been reopened publicly at the time of this
-entry. Reopening requires a new root commit, another full-tree validation, and a
-separate visibility check.
+The sanitized replacement began at clean root commit
+`03c995bef00a72d9edbde9ee089b6ee30ad7274a`. The full tree passed validation
+before publication. GitHub then reported the replacement repository as public
+with `main` as its default branch.
 
 ## Why this record will remain
 
@@ -52,8 +53,8 @@ value.
 - Every human-facing gate has an exit. A process that only sends a person back
   to the same gate fails review.
 
-## Reopening gate
+## Reopening result
 
-The deletion half of this gate is complete. After reopening, this record must be
-updated with the clean root commit and verified public state. Generated text is
-not evidence that an external action occurred.
+The old remote returned HTTP 404 before the replacement was created. The new
+root commit, successful validation, and public visibility were each observed.
+This does not prove that earlier caches or copies disappeared.

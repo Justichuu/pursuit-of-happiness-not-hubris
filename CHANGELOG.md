@@ -20,3 +20,4 @@
   deletion permission.
 - Added the gate rule: narrow purpose, named exit, close step, and verified
   closed state.
+- Reopened the sanitized repository from a verified clean root commit.
