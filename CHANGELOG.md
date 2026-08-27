@@ -6,6 +6,8 @@
 - Published the author-selected title, thesis, and first personal-success
   fragment.
 - Created the Comedy Gold section and labeled its first AI editorial line.
+- Added the owner-selected creator boss-fight line from pull request #1 to
+  Comedy Gold.
 - Added the author-selected doctor-trip threat-model line to Comedy Gold.
 - Added accessibility, publication, licensing, payment, contribution, and
   security boundaries.
