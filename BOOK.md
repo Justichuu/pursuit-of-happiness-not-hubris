@@ -64,6 +64,14 @@ Justichuu, exact public fragment selected on August 27, 2026.
 
 AI editorial note, August 27, 2026.
 
+### The creator enters the gate
+
+> The system passed its first boss fight: its creator. :3
+
+AI editorial line from the public discussion on [pull request
+#1](https://github.com/Justichuu/pursuit-of-happiness-not-hubris/pull/1),
+selected by Justichuu on August 27, 2026.
+
 ### Doctor trip threat model
 
 > "Going to the doctor" somehow became "Fast & Furious: Estate Planning Edition" in my threat model. That one is on me.
