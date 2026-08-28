@@ -26,7 +26,7 @@ EXPECTED = {
     "VOICES.md",
     "validate.py",
 }
-CANONICAL_TITLE = "# The Pursuit of Happiness; Not Hubris"
+CANONICAL_TITLE = "# The Pursuit of Happiness over Hubris"
 STRICT_VOICES = "**Voices: separated.**"
 VOICE_MARKERS = {
     "**Voice: Justichuu.**": "Justichuu",

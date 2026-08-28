@@ -12,6 +12,8 @@
   Gold, pending selection by Justichuu.
 - Recorded in contribution rules that a Justichuu passage is corrected in
   review rather than edited in place.
+- Proposed the title "The Pursuit of Happiness over Hubris" and updated the
+  canonical title check to match. The repository name is unchanged.
 
 ## 0.1.0, 2026-08-27
 

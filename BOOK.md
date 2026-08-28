@@ -1,4 +1,4 @@
-# The Pursuit of Happiness; Not Hubris
+# The Pursuit of Happiness over Hubris
 
 By Justichuu
 

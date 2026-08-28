@@ -1,4 +1,4 @@
-# The Pursuit of Happiness; Not Hubris
+# The Pursuit of Happiness over Hubris
 
 This is the day-one public draft of a living open book by Justichuu.
 
