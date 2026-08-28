@@ -21,6 +21,30 @@ The formula will apply only to receipts actually controlled by the project. CC
 BY-SA 4.0 allows independent commercial reuse and does not make every reuser a
 customer or royalty payer.
 
+## Proof of work
+
+Work is shown by a pull request. The pull request is the record. It holds the
+exact change, who proposed it, when, what the checks said, the review
+conversation, and whether it was merged.
+
+- Work done outside a pull request leaves no record here, so it cannot support a
+  payment claim later. The effort may have been real. The evidence is not.
+- A commit pushed straight to the default branch skips the record. Maintainer
+  edits may still happen that way and carry no payment claim.
+- Every commit offered inside a pull request must already pass the repository
+  checks. An untested commit is not evidence of work that works.
+- A pull request proves what was proposed and when. It does not prove identity,
+  rights, consent, or quality, and a passing check is not a claim that the words
+  are true.
+- A payment agreed under this policy names the merged pull request it pays for.
+  The pull-request number, the merge commit, and the accepted written terms are
+  the whole audit trail.
+- AI assistance inside a pull request is disclosed there, which
+  [CONTRIBUTING.md](CONTRIBUTING.md) already requires.
+
+This section records how work is evidenced. It does not move money, create a
+pool, or promise that any pull request will be paid.
+
 ## Payment rails
 
 The contributor may propose ChuuPayMe or Stripe. Account, tax, bank, wallet, and
