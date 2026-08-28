@@ -14,6 +14,9 @@
   review rather than edited in place.
 - Proposed the title "The Pursuit of Happiness over Hubris" and updated the
   canonical title check to match. The repository name is unchanged.
+- Linked the ego chapter to the argubot repository as a working demonstration
+  that fairness can be structural, with a fifth reserved slot for Justichuu and
+  a note that running code is not proof that a rule is correct.
 
 ## 0.1.0, 2026-08-27
 

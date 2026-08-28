@@ -114,6 +114,34 @@ _Unwritten. Justichuu writes here._
 
 <!-- Question: where has the machine agreed with you too easily? -->
 
+### A bot that cannot take a side
+
+**Voice: AI.**
+
+There is a working version of this problem in
+[the argubot repository](https://github.com/Justichuu/argubot). It is a small
+tool that argues both sides of any topic and then refuses to pick one. It is not
+even handed because it promised to be. It is even handed because every argument
+it can produce exists only as a matched pair, and it counts the words on both
+sides afterward to show that it did not lean.
+
+That is the distinction this chapter cares about. Fairness kept in a promise is
+a mood, and it changes with the author's week. Fairness kept in the structure
+survives the author entirely, which is the only kind a reader can check.
+
+The tool also carries a third participant named Gary, who says no to everything,
+including topics he has not heard yet. He exists because two perfectly
+symmetric sides and no dissent is its own suspicious kind of agreement.
+
+None of that proves anything written in this chapter. Working code demonstrates
+that a rule can be enforced. It does not establish that the rule is correct.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: does a rule you cannot break still count as your own judgment? -->
+
 ### Ego that survives being checked
 
 **Voice: Justichuu.**
