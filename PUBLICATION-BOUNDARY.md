@@ -10,6 +10,9 @@ conversations.
 - One clearly labeled AI editorial line
 - Public licensing, accessibility, contribution, payment, and security rules
 - A validator that reports rule failures without printing suspected secrets
+- Comedy Silver, an unsorted public ore pile. A find there is released on
+  purpose and is not a Comedy Gold selection until a miner sorts it and
+  Justichuu chooses a bar
 
 ## Always excluded unless deliberately reviewed and released
 
