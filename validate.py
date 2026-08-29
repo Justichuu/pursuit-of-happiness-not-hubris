@@ -23,8 +23,16 @@ EXPECTED = {
     "PUBLICATION-BOUNDARY.md",
     "README.md",
     "SECURITY.md",
+    "VOICES.md",
     "validate.py",
 }
+CANONICAL_TITLE = "# The Pursuit of Happiness over Hubris"
+STRICT_VOICES = "**Voices: separated.**"
+VOICE_MARKERS = {
+    "**Voice: Justichuu.**": "Justichuu",
+    "**Voice: AI.**": "AI",
+}
+UNWRITTEN_SLOT = "_Unwritten. Justichuu writes here._"
 TEXT_SUFFIXES = {".md", ".py", ".yml", ".gitignore"}
 LONG_DASHES = {"\u2013", "\u2014"}
 PRIVATE_PATH_SHAPES = (
@@ -45,12 +53,18 @@ SECRET_SHAPES = (
 )
 
 
+SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache"}
+
+
 def public_files() -> List[Path]:
     """Return every non-Git file that would be part of the public tree."""
     return sorted(
         path
         for path in ROOT.rglob("*")
-        if path.is_file() and ".git" not in path.relative_to(ROOT).parts
+        if path.is_file()
+        and not any(
+            part in SKIP_DIR_NAMES for part in path.relative_to(ROOT).parts
+        )
     )
 
 
@@ -98,10 +112,150 @@ def validate_book(failures: List[str]) -> None:
     book = ROOT / "BOOK.md"
     if book.exists():
         book_text = book.read_text(encoding="utf-8")
-        if not book_text.startswith("# The Pursuit of Happiness; Not Hubris"):
+        if not book_text.startswith(CANONICAL_TITLE):
             fail("BOOK.md", "canonical-title-missing", failures)
         if "## Comedy Gold" not in book_text:
             fail("BOOK.md", "comedy-gold-section-missing", failures)
+
+
+def strip_fences(text: str) -> tuple:
+    """Return kept lines and whether a fence was left open."""
+    kept = []
+    fenced = False
+    for line in text.splitlines():
+        if line.lstrip().startswith("```"):
+            fenced = not fenced
+        elif not fenced:
+            kept.append(line)
+    return kept, fenced
+
+
+def chapters(lines: List[str]) -> List[tuple]:
+    """Split Markdown lines into a list of second-level chapter bodies."""
+    found = []
+    body: List[str] = []
+    title = None
+    for line in lines:
+        if line.startswith("## "):
+            if title is not None:
+                found.append((title, body))
+            title = line[3:].strip()
+            body = []
+        elif title is not None:
+            body.append(line)
+    if title is not None:
+        found.append((title, body))
+    return found
+
+
+def voice_blocks(body: List[str]) -> tuple:
+    """Return voiced blocks and any prose that carries no voice marker."""
+    blocks = []
+    orphans = []
+    voice = None
+    held: List[str] = []
+    for raw in body:
+        line = raw.strip()
+        if line in VOICE_MARKERS:
+            if voice is not None:
+                blocks.append((voice, held))
+            voice = VOICE_MARKERS[line]
+            held = []
+        elif line.startswith("#"):
+            if voice is not None:
+                blocks.append((voice, held))
+            voice = None
+            held = []
+        elif line and line != STRICT_VOICES:
+            if voice is None:
+                orphans.append(line)
+            else:
+                held.append(line)
+    if voice is not None:
+        blocks.append((voice, held))
+    return blocks, orphans
+
+
+def prose_of(block: List[str]) -> List[str]:
+    """Drop single-line HTML comments so only authored prose remains."""
+    return [line for line in block if not line.startswith("<!--")]
+
+
+def validate_voice_rules(relative: str, body: List[str],
+                         failures: List[str]) -> None:
+    """Require one named voice per passage and unwritable reserved slots."""
+    blocks, orphans = voice_blocks(body)
+    if orphans:
+        fail(relative, "voice-marker-missing", failures)
+    for voice, block in blocks:
+        prose = prose_of(block)
+        if not prose:
+            fail(relative, "empty-voice-block", failures)
+            continue
+        reserved = UNWRITTEN_SLOT in prose
+        if reserved and voice != "Justichuu":
+            fail(relative, "reserved-slot-outside-human-voice", failures)
+        if reserved and len(prose) > 1:
+            fail(relative, "reserved-slot-holds-other-text", failures)
+
+
+def is_strict(body: List[str]) -> bool:
+    """Report whether a chapter declares separated voices anywhere."""
+    return any(line.strip() == STRICT_VOICES for line in body)
+
+
+def declaration_is_first(body: List[str]) -> bool:
+    """Require the opt-in line to be the first non-empty chapter line."""
+    for line in body:
+        if line.strip():
+            return line.strip() == STRICT_VOICES
+    return False
+
+
+def strict_chapters() -> List[tuple]:
+    """Return every chapter that opted into the voice separation rule."""
+    found = []
+    for name in sorted(EXPECTED):
+        path = ROOT / name
+        if path.suffix.lower() != ".md" or not path.exists():
+            continue
+        lines, unclosed = strip_fences(path.read_text(encoding="utf-8"))
+        if unclosed:
+            found.append((name, None))
+            continue
+        for _, body in chapters(lines):
+            if is_strict(body):
+                found.append((name, body))
+    return found
+
+
+def validate_voices(failures: List[str]) -> None:
+    """Apply the voice separation rules to every strict chapter."""
+    for name, body in strict_chapters():
+        if body is None:
+            fail(name, "fence-unclosed", failures)
+            continue
+        if not declaration_is_first(body):
+            fail(name, "voices-declaration-not-first", failures)
+        validate_voice_rules(name, body, failures)
+
+
+def voice_ledger() -> List[str]:
+    """Return one report line per voice plus the reserved-slot count."""
+    counts = {name: 0 for name in set(VOICE_MARKERS.values())}
+    reserved = 0
+    for _, body in strict_chapters():
+        if body is None:
+            continue
+        for voice, block in voice_blocks(body)[0]:
+            prose = prose_of(block)
+            if UNWRITTEN_SLOT in prose:
+                reserved += 1
+            else:
+                counts[voice] += sum(len(line.split()) for line in prose)
+    lines = [f"{voice}: {counts[voice]} words" for voice in sorted(counts)]
+    lines.append(f"Reserved slots awaiting Justichuu: {reserved}")
+    return lines
 
 
 def validate_incident(failures: List[str]) -> None:
@@ -125,8 +279,13 @@ def report(failures: List[str], file_count: int) -> int:
     return 0
 
 
-def main() -> int:
+def main(argv: List[str]) -> int:
     """Run the complete public-tree validation."""
+    if "--voices" in argv:
+        for line in voice_ledger():
+            print(line)
+        return 0
+
     failures: List[str] = []
     files = public_files()
     actual = {path.relative_to(ROOT).as_posix() for path in files}
@@ -135,8 +294,9 @@ def main() -> int:
         validate_public_file(path, failures)
     validate_book(failures)
     validate_incident(failures)
+    validate_voices(failures)
     return report(failures, len(actual))
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))
