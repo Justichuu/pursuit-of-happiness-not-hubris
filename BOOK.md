@@ -165,7 +165,9 @@ only version of correct that another person can verify.
 ## Comedy Gold
 
 Comedy Gold keeps the lines that reveal a real idea because they are funny, not
-the lines that expose somebody because they were private.
+the lines that expose somebody because they were private. Unsorted finds wait
+in [Comedy Silver](COMEDY-SILVER.md). Gold of any size goes to the smelter
+before it becomes a bar here.
 
 ### First human fragment
 

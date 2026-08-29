@@ -16,6 +16,7 @@ EXPECTED = {
     "ACCESSIBILITY.md",
     "BOOK.md",
     "CHANGELOG.md",
+    "COMEDY-SILVER.md",
     "CONTRIBUTING.md",
     "INCIDENT.md",
     "LICENSE.md",
@@ -116,6 +117,20 @@ def validate_book(failures: List[str]) -> None:
             fail("BOOK.md", "canonical-title-missing", failures)
         if "## Comedy Gold" not in book_text:
             fail("BOOK.md", "comedy-gold-section-missing", failures)
+
+
+def validate_comedy_silver(failures: List[str]) -> None:
+    """Require the unsorted ore pile and refuse a false Gold claim."""
+    silver = ROOT / "COMEDY-SILVER.md"
+    if not silver.exists():
+        return
+    text = silver.read_text(encoding="utf-8")
+    if not text.startswith("# Comedy Silver"):
+        fail("COMEDY-SILVER.md", "comedy-silver-title-missing", failures)
+    if "Status: unsorted ore." not in text:
+        fail("COMEDY-SILVER.md", "comedy-silver-unsorted-status-missing", failures)
+    if "Not selected for Comedy Gold." not in text:
+        fail("COMEDY-SILVER.md", "comedy-silver-not-gold-missing", failures)
 
 
 def strip_fences(text: str) -> tuple:
@@ -293,6 +308,7 @@ def main(argv: List[str]) -> int:
     for path in files:
         validate_public_file(path, failures)
     validate_book(failures)
+    validate_comedy_silver(failures)
     validate_incident(failures)
     validate_voices(failures)
     return report(failures, len(actual))

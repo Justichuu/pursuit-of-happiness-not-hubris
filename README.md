@@ -18,6 +18,9 @@ belongs here.
 
 - The title, thesis, and selected writing that the author intentionally releases
 - The Comedy Gold section, with exact attribution for every quoted fragment
+- [Comedy Silver](COMEDY-SILVER.md), the unsorted ore pile. A find stays there
+  until a miner sorts it. Gold goes to the smelter. Selected bars land in
+  Comedy Gold. Size names are nugget, hunk, and bar. It's all gold.
 - The publication boundary, [voice separation rule](VOICES.md), and contribution
   rules
 - The name-free [publication incident record](INCIDENT.md)

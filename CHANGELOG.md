@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Opened Comedy Silver as the unsorted ore pile. A Justichuu find about
+  syntax, the smelter, and "it's all gold!! @_@" waits there, marked not
+  selected for Comedy Gold. The miner is asked to export only after a
+  sort-and-export workflow exists. Size names are nugget, hunk, and bar.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

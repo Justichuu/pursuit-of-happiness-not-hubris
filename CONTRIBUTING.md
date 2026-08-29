@@ -40,6 +40,8 @@ contributor's copyright or create a debt.
 - Do not submit passwords, keys, recovery phrases, addresses, private medical or
   family information, private conversations, or unpublished security details.
 - A quotation must preserve exact wording, speaker, source, and visible cuts.
+  Comedy finds land in [Comedy Silver](COMEDY-SILVER.md) first. They are not
+  Comedy Gold until a miner sorts them and Justichuu selects a bar.
 - AI assistance must be disclosed. Generated text is never evidence that a fact
   is true or that a person consented.
 - Voices stay separated. In a chapter that declares separated voices, every
