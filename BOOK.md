@@ -197,7 +197,8 @@ AI editorial note, selected by Justichuu on August 27, 2026.
 
 > The fastest way to feel correct is to explain yourself to something that cannot leave the conversation.
 
-AI editorial note, proposed on August 28, 2026, pending selection by Justichuu.
+AI editorial note from the ego chapter, selected by Justichuu on August 29,
+2026.
 
 ## What this book will not pretend
 

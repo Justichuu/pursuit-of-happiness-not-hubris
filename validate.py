@@ -53,12 +53,18 @@ SECRET_SHAPES = (
 )
 
 
+SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache"}
+
+
 def public_files() -> List[Path]:
     """Return every non-Git file that would be part of the public tree."""
     return sorted(
         path
         for path in ROOT.rglob("*")
-        if path.is_file() and ".git" not in path.relative_to(ROOT).parts
+        if path.is_file()
+        and not any(
+            part in SKIP_DIR_NAMES for part in path.relative_to(ROOT).parts
+        )
     )
 
 
@@ -112,8 +118,8 @@ def validate_book(failures: List[str]) -> None:
             fail("BOOK.md", "comedy-gold-section-missing", failures)
 
 
-def strip_fences(text: str) -> List[str]:
-    """Return text lines with fenced code blocks removed."""
+def strip_fences(text: str) -> tuple:
+    """Return kept lines and whether a fence was left open."""
     kept = []
     fenced = False
     for line in text.splitlines():
@@ -121,7 +127,7 @@ def strip_fences(text: str) -> List[str]:
             fenced = not fenced
         elif not fenced:
             kept.append(line)
-    return kept
+    return kept, fenced
 
 
 def chapters(lines: List[str]) -> List[tuple]:
@@ -194,7 +200,12 @@ def validate_voice_rules(relative: str, body: List[str],
 
 
 def is_strict(body: List[str]) -> bool:
-    """Report whether a chapter opens by declaring separated voices."""
+    """Report whether a chapter declares separated voices anywhere."""
+    return any(line.strip() == STRICT_VOICES for line in body)
+
+
+def declaration_is_first(body: List[str]) -> bool:
+    """Require the opt-in line to be the first non-empty chapter line."""
     for line in body:
         if line.strip():
             return line.strip() == STRICT_VOICES
@@ -208,7 +219,10 @@ def strict_chapters() -> List[tuple]:
         path = ROOT / name
         if path.suffix.lower() != ".md" or not path.exists():
             continue
-        lines = strip_fences(path.read_text(encoding="utf-8"))
+        lines, unclosed = strip_fences(path.read_text(encoding="utf-8"))
+        if unclosed:
+            found.append((name, None))
+            continue
         for _, body in chapters(lines):
             if is_strict(body):
                 found.append((name, body))
@@ -218,6 +232,11 @@ def strict_chapters() -> List[tuple]:
 def validate_voices(failures: List[str]) -> None:
     """Apply the voice separation rules to every strict chapter."""
     for name, body in strict_chapters():
+        if body is None:
+            fail(name, "fence-unclosed", failures)
+            continue
+        if not declaration_is_first(body):
+            fail(name, "voices-declaration-not-first", failures)
         validate_voice_rules(name, body, failures)
 
 
@@ -226,6 +245,8 @@ def voice_ledger() -> List[str]:
     counts = {name: 0 for name in set(VOICE_MARKERS.values())}
     reserved = 0
     for _, body in strict_chapters():
+        if body is None:
+            continue
         for voice, block in voice_blocks(body)[0]:
             prose = prose_of(block)
             if UNWRITTEN_SLOT in prose:

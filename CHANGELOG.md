@@ -2,14 +2,17 @@
 
 ## Unreleased
 
-- Added the ego chapter with separated voices, labeled AI passages, and four
+- Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
   blended paragraphs, and no machine drafting inside a human slot.
 - Extended the validator to enforce voice separation and to report a voice
-  ledger through `python validate.py --voices`.
-- Added the proposed AI editorial line about the agreeable mirror to Comedy
-  Gold, pending selection by Justichuu.
+  ledger through `python validate.py --voices`. Review also closed two
+  bypasses: an unclosed fence no longer hides later voice checks, and a
+  chapter that declares separated voices anywhere must place the declaration
+  first. Cache directories are no longer treated as public files.
+- Added the agreeable-mirror AI editorial line to Comedy Gold, selected with
+  this merge.
 - Recorded in contribution rules that a Justichuu passage is corrected in
   review rather than edited in place.
 - Proposed the title "The Pursuit of Happiness over Hubris" and updated the

@@ -61,10 +61,11 @@ An unwritten chapter is honest. A ghostwritten one is not.
 
 ## What the validator checks
 
-`python validate.py` fails the public tree when a strict chapter contains prose
-with no voice marker, an empty voice block, a reserved slot holding anything
-other than its placeholder and questions, or an AI block using the human
-placeholder.
+`python validate.py` fails the public tree when a chapter that contains
+`**Voices: separated.**` does not put that line first, when a Markdown fence is
+left open, when a strict chapter contains prose with no voice marker, when a
+voice block is empty, when a reserved slot holds anything other than its
+placeholder and questions, or when an AI block uses the human placeholder.
 
 The validator also reports a voice ledger:
 
