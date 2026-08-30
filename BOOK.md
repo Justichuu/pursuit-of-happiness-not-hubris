@@ -2,7 +2,7 @@
 
 By Justichuu
 
-Status: living public draft, version 0.1.0
+Status: living public draft, version 0.1.1
 
 ## The thesis
 
@@ -199,6 +199,14 @@ AI editorial note, selected by Justichuu on August 27, 2026.
 
 AI editorial note from the ego chapter, selected by Justichuu on August 29,
 2026.
+
+### Second human fragment
+
+> gold is gold because its gold
+>
+> thats not an idea thats peer pressure
+
+Justichuu, selected 30 August 2026.
 
 ## What this book will not pretend
 
