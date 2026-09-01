@@ -19,6 +19,8 @@
   report, not a type.
 - Added "Seems legit" as a selected fragment. The labeled reply refuses to
   read the stamp as confirmation that the essay is true.
+- Added "Addicted to irony" as a selected fragment. The labeled reply
+  treats it as a named loop, not a habit drafted in his voice.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
