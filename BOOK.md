@@ -258,6 +258,18 @@ upload](https://youtu.be/ohfVOpBbXs0) of Anal Cunt's 1997 track
 
 Justichuu, selected 1 September 2026.
 
+> I never thought I'd see the word "anal cunt" in chat
+
+Justichuu, selected 1 September 2026.
+
+> that's what happens with LLMs
+>
+> They are ahead of your time.
+>
+> Latency issues
+
+Justichuu, selected 1 September 2026.
+
 ## What this book will not pretend
 
 - It will not promise that a product, model, drug, investment, or philosophy

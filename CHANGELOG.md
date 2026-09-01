@@ -11,7 +11,8 @@
   the Sonic Shuffle in-game line The Carbuncle ate itself, cited as the Game
   Grumps Part 2 reference, and his present-tense humor note pointing at a
   2005 upload of Anal Cunt's 1997 track without reprinting lyrics, and the
-  selected line Schweet. Book draft 0.1.2.
+  selected line Schweet, the chat-surprise line, and the note that LLMs are
+  ahead of your time: latency issues. Book draft 0.1.2.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
