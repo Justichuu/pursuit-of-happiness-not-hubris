@@ -21,6 +21,12 @@
   read the stamp as confirmation that the essay is true.
 - Added "Addicted to irony" as a selected fragment. The labeled reply
   treats it as a named loop, not a habit drafted in his voice.
+- Added the product-release gate: a book-page PDF may call itself a
+  product only after Justichuu fills every reserved slot and changes the
+  BOOK.md status line. `validate.py --release` and `build_book.py
+  --release` refuse the cut until then. A draft PDF can be built for
+  layout and is marked as not a product. The tooling has no final
+  version. A new chapter asks him whether the book never ends.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

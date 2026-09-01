@@ -7,6 +7,12 @@ link text, short paragraphs, and no meaning that depends on color, animation,
 audio, pointer precision, or an image. It should remain usable with keyboard,
 screen reader, zoom, reflow, text extraction, and low-bandwidth access.
 
+The Markdown in BOOK.md remains the accessible source. A generated PDF is a
+paginated edition of that source. It must keep extractable text, a logical
+heading order, and no meaning that exists only as a watermark or a page
+decoration. A draft PDF is labeled as not a product. A product PDF cannot be
+cut while reserved slots are empty. See [RELEASE.md](RELEASE.md).
+
 Future HTML, EPUB, audio, video, or PDF editions must preserve:
 
 - A logical heading and reading order

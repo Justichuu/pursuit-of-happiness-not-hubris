@@ -78,6 +78,11 @@ slots still waiting on Justichuu. It is a measurement, not a target. A page
 where the machine wrote most of the words is not automatically wrong, but the
 reader gets to see it.
 
+A product release cannot be cut while any reserved slot remains. See
+[RELEASE.md](RELEASE.md). `python validate.py --release` and
+`python build_book.py --release` both fail until he writes those slots and
+changes the BOOK.md status line to a product release himself.
+
 ## The honest limit of this rule
 
 Tooling can prove that a label is present and that a block is not mixed. It

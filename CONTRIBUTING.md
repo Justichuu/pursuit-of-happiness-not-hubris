@@ -46,6 +46,8 @@ contributor's copyright or create a debt.
   passage carries a voice marker, generated text never appears inside a
   Justichuu block, and a slot reserved for him is left unwritten rather than
   drafted for him. See [VOICES.md](VOICES.md).
+- A product PDF is not created by filling his slots for him or by changing
+  the status line. See [RELEASE.md](RELEASE.md).
 - Corrections to a Justichuu passage are proposed in review for him to apply,
   not edited in place by a contributor or a tool.
 - Accessibility and plain-language corrections are part of editorial quality.

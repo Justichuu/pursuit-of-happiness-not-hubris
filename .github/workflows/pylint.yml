@@ -27,5 +27,16 @@ jobs:
         python -m pip install pylint
     - name: Validate the public tree
       run: python validate.py
+    - name: Run release-gate tests
+      run: python -m unittest test_validate.py
     - name: Analyze Python quality
-      run: python -m pylint validate.py
+      run: python -m pylint validate.py build_book.py test_validate.py
+    - name: Build a marked draft PDF
+      if: matrix.python-version == '3.10'
+      run: python build_book.py --draft
+    - name: Upload the draft PDF
+      if: matrix.python-version == '3.10'
+      uses: actions/upload-artifact@v4
+      with:
+        name: book-draft-not-a-product
+        path: release/*DRAFT.pdf

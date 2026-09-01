@@ -22,6 +22,7 @@ belongs here.
   rules
 - The name-free [publication incident record](INCIDENT.md)
 - The validator used before publication
+- The product-release gate and the book-page PDF builder
 - The Git history showing how the public draft changes
 
 ## What is not public
@@ -51,6 +52,21 @@ To see how many words belong to each voice:
 ```text
 python validate.py --voices
 ```
+
+A living draft may have empty human slots. A product release may not. The
+product gate and the book-page PDF builder are documented in
+[RELEASE.md](RELEASE.md):
+
+```text
+python validate.py --release
+python build_book.py --draft
+python build_book.py --release
+```
+
+`--release` fails until Justichuu fills every reserved slot and changes the
+BOOK.md status line to a product release. That failure is the gate. A draft
+PDF can be built for layout and is marked as not a product. There is no
+final version in the tooling. A product is a cut. The draft can continue.
 
 ## License and contributions
 
@@ -83,7 +99,8 @@ The full rule is in [VOICES.md](VOICES.md), and the validator enforces it.
 - Human-authored foundation: title, thesis language, and the first selected
   Comedy Gold fragment
 - AI assistance: editing, repository structure, validation, labeled editorial
-  lines, and labeled passages in the ego and irony-mark chapters
+  lines, labeled passages in the ego, irony-mark, and cut chapters, and the
+  product-release gate that cannot ship while his slots are empty
 - Voice accounting: run `python validate.py --voices` for the current word count
   of each voice and the number of slots still awaiting Justichuu
 
