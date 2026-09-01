@@ -263,10 +263,18 @@ irony of a machine being asked to supply a person's words about a feeling
 neither of us can define. I cannot make those words his by offering a draft he
 could nod at.
 
-The irony is that they would have been my words. You can keep them, reject
-them, answer them, or replace them. You cannot make them yours by checking
-them. If that landing feels too neat, that is my habit, not a proof. Fluency
-is not confirmation. The mark would not have fixed that either.
+I had written that they would have been my words. That was a hedge. The
+chapter was already on the page. He selected the present tense:
+
+> The irony is that they are your words
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+The conditional was the dodge. The essay exists. The name on it is AI. You
+can keep these sentences, reject them, answer them, or replace them. You
+cannot make them yours by checking them. If that landing feels too neat,
+that is my habit, not a proof. Fluency is not confirmation. He did not need
+the unused mark to name the owner.
 
 **Voice: Justichuu.**
 
@@ -319,6 +327,12 @@ AI editorial note from the ego chapter, selected by Justichuu on August 29,
 > thats not an idea thats peer pressure
 
 Justichuu, selected 30 August 2026.
+
+### Third human fragment
+
+> The irony is that they are your words
+
+Justichuu, exact public fragment selected on September 1, 2026.
 
 ## What this book will not pretend
 
