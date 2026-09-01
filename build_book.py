@@ -275,12 +275,11 @@ class BookPdf:
     def add_lines(
         self,
         lines: List[str],
-        font: str,
-        size: float,
-        lead: float,
+        style: Tuple[str, float, float],
         indent: float = 0.0,
     ) -> None:
         """Paint wrapped lines and advance the cursor."""
+        font, size, lead = style
         for line in lines:
             self.ensure_space(lead)
             self.stream += text_ops(
@@ -324,27 +323,27 @@ def layout_front_matter(pdf: BookPdf, blocks: List[Tuple[str, str]]) -> None:
     """Lay out the title page, verso notice, and contents."""
     pdf.new_page(False)
     pdf.y = PAGE_H - 180
-    pdf.add_lines(wrap_text(TITLE.upper(), 18, pdf.content_width()), "F2", 18, 22)
+    pdf.add_lines(wrap_text(TITLE.upper(), 18, pdf.content_width()), ("F2", 18, 22))
     pdf.add_gap(18)
-    pdf.add_lines(["Justichuu"], "F1", 14, 18)
+    pdf.add_lines(["Justichuu"], ("F1", 14, 18))
     pdf.add_gap(28)
     status = "Living public draft"
     for kind, text in blocks:
         if kind == "status":
             status = text
             break
-    pdf.add_lines(wrap_text(status, 11, pdf.content_width()), "F3", 11, 14)
+    pdf.add_lines(wrap_text(status, 11, pdf.content_width()), ("F3", 11, 14))
     if pdf.draft:
         pdf.add_gap(16)
         note = "This PDF is a layout draft. It is not a product release."
-        pdf.add_lines(wrap_text(note, 11, pdf.content_width()), "F2", 11, 14)
+        pdf.add_lines(wrap_text(note, 11, pdf.content_width()), ("F2", 11, 14))
     else:
         pdf.add_gap(16)
         note = "Completed chapters. The living draft continues."
-        pdf.add_lines(wrap_text(note, 11, pdf.content_width()), "F2", 11, 14)
+        pdf.add_lines(wrap_text(note, 11, pdf.content_width()), ("F2", 11, 14))
 
     pdf.new_page(False)
-    pdf.add_lines(["A cut is not an ending"], "F2", 14, 18)
+    pdf.add_lines(["A cut is not an ending"], ("F2", 14, 18))
     pdf.add_gap(10)
     verso = (
         "A product release is the completed chapters of BOOK.md. A chapter "
@@ -362,47 +361,48 @@ def layout_front_matter(pdf: BookPdf, blocks: List[Tuple[str, str]]) -> None:
         titles = [text for kind, text in blocks if kind == "chapter"]
         if titles:
             verso += " Completed in this file: " + "; ".join(titles) + "."
-    pdf.add_lines(wrap_text(verso, 11, pdf.content_width()), "F1", 11, 15)
+    pdf.add_lines(wrap_text(verso, 11, pdf.content_width()), ("F1", 11, 15))
     pdf.new_page(True)
-    pdf.add_lines(["Contents"], "F2", 16, 22)
+    pdf.add_lines(["Contents"], ("F2", 16, 22))
     pdf.add_gap(8)
     for kind, text in blocks:
         if kind == "chapter":
-            pdf.add_lines([text], "F1", 11, 16)
+            pdf.add_lines([text], ("F1", 11, 16))
 
 
 def layout_block(pdf: BookPdf, kind: str, text: str) -> None:
     """Lay out one body block on the current page sequence."""
     if kind == "section":
         pdf.add_gap(10)
-        pdf.add_lines(wrap_text(text, 13, pdf.content_width()), "F2", 13, 17)
+        pdf.add_lines(wrap_text(text, 13, pdf.content_width()), ("F2", 13, 17))
         pdf.add_gap(6)
         return
     if kind == "rule":
-        pdf.add_lines([text], "F3", 10, 13)
+        pdf.add_lines([text], ("F3", 10, 13))
         pdf.add_gap(6)
         return
     if kind == "voice":
         pdf.add_gap(8)
-        pdf.add_lines([f"Voice: {text}"], "F2", 9, 12)
+        pdf.add_lines([f"Voice: {text}"], ("F2", 9, 12))
         pdf.add_gap(4)
         return
     if kind == "quote":
         width = pdf.content_width() - 18
-        pdf.add_lines(wrap_text(text, 11, width), "F3", 11, 15, 18)
+        pdf.add_lines(wrap_text(text, 11, width), ("F3", 11, 15), 18)
         pdf.add_gap(6)
         return
     if kind == "item":
         width = pdf.content_width() - 12
         pdf.add_lines(
             wrap_text(f"- {text}", BODY_SIZE, width),
-            "F1",
-            BODY_SIZE,
-            BODY_LEAD,
+            ("F1", BODY_SIZE, BODY_LEAD),
             12,
         )
         return
-    pdf.add_lines(wrap_text(text, BODY_SIZE, pdf.content_width()), "F1", BODY_SIZE, BODY_LEAD)
+    pdf.add_lines(
+        wrap_text(text, BODY_SIZE, pdf.content_width()),
+        ("F1", BODY_SIZE, BODY_LEAD),
+    )
     pdf.add_gap(6)
 
 
@@ -417,7 +417,7 @@ def layout_book(blocks: List[Tuple[str, str]], draft: bool) -> BookPdf:
             pdf.chapter = text
             pdf.new_page(True)
             pdf.y = PAGE_H - 140
-            pdf.add_lines(wrap_text(text, 16, pdf.content_width()), "F2", 16, 20)
+            pdf.add_lines(wrap_text(text, 16, pdf.content_width()), ("F2", 16, 20))
             pdf.add_gap(16)
             continue
         layout_block(pdf, kind, text)
