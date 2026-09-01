@@ -6,7 +6,9 @@
   seventeen-seconds-of-noice fragment there: a bot chat with no other context,
   the 17-second echo, and Justichuu's notes on the exchange.
 - Opened the Andromedy section with Justichuu's exact line: in between Dramedy
-  and men. Book draft 0.1.2.
+  and men.
+- Opened the Ironic humor section with Justichuu's exact question, unanswered.
+  Book draft 0.1.2.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
