@@ -27,6 +27,9 @@
   --release` refuse the cut until then. A draft PDF can be built for
   layout and is marked as not a product. The tooling has no final
   version. A new chapter asks him whether the book never ends.
+- Redefined a product release as completed chapters. Unfinished chapters
+  stay in the living draft. His selected line naming that rule is in
+  Comedy Gold. `--release` now ships only chapters with no reserved slot.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
