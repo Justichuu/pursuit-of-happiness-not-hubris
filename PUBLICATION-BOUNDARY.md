@@ -30,6 +30,20 @@ conversations.
 4. The exact change is reviewed and committed.
 5. Only that repository is pushed.
 
+## Product release
+
+A living public draft may contain reserved slots. A product release is the
+completed chapters only.
+
+A product PDF is a paginated edition of those finished chapters, not a paid
+secret file and not a final edition declared by a tool. A chapter that still
+holds `_Unwritten. Justichuu writes here._` stays out of the product. The
+commands are in [RELEASE.md](RELEASE.md).
+
+A draft PDF may be built for layout while the book is still a draft. It must
+be marked as not a product. Generated PDFs live under `release/` and are not
+part of the public source tree.
+
 No tool may automatically mine private conversations into this public project.
 No human signature, legal approval, sale, or credential may be inferred from a
 generated file.

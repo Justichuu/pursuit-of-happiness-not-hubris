@@ -78,6 +78,10 @@ slots still waiting on Justichuu. It is a measurement, not a target. A page
 where the machine wrote most of the words is not automatically wrong, but the
 reader gets to see it.
 
+A product release is completed chapters, not the whole unfinished book. See
+[RELEASE.md](RELEASE.md). A chapter with a reserved slot cannot enter the
+product PDF. The living draft can still hold those slots.
+
 ## The honest limit of this rule
 
 Tooling can prove that a label is present and that a block is not mixed. It

@@ -22,6 +22,7 @@ belongs here.
   rules
 - The name-free [publication incident record](INCIDENT.md)
 - The validator used before publication
+- The product-release gate and the book-page PDF builder
 - The Git history showing how the public draft changes
 
 ## What is not public
@@ -51,6 +52,20 @@ To see how many words belong to each voice:
 ```text
 python validate.py --voices
 ```
+
+Completed chapters are a product release. Unfinished chapters stay in the
+living draft. The gate and the book-page PDF builder are documented in
+[RELEASE.md](RELEASE.md):
+
+```text
+python validate.py --release
+python build_book.py --draft
+python build_book.py --release
+```
+
+`--release` writes only chapters with no reserved unwritten slot. `--draft`
+builds the whole living book and marks it as not a product. There is no
+final version in the tooling. The draft can continue.
 
 ## License and contributions
 
@@ -83,7 +98,8 @@ The full rule is in [VOICES.md](VOICES.md), and the validator enforces it.
 - Human-authored foundation: title, thesis language, and the first selected
   Comedy Gold fragment
 - AI assistance: editing, repository structure, validation, labeled editorial
-  lines, and labeled passages in the ego chapter
+  lines, labeled passages in the ego, irony-mark, and cut chapters, and the
+  product-release gate that ships completed chapters only
 - Voice accounting: run `python validate.py --voices` for the current word count
   of each voice and the number of slots still awaiting Justichuu
 

@@ -13,6 +13,7 @@ EXPECTED = {
     ".gitignore",
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/workflows/pylint.yml",
+    ".github/workflows/release.yml",
     "ACCESSIBILITY.md",
     "BOOK.md",
     "CHANGELOG.md",
@@ -22,8 +23,11 @@ EXPECTED = {
     "PAYMENT.md",
     "PUBLICATION-BOUNDARY.md",
     "README.md",
+    "RELEASE.md",
     "SECURITY.md",
     "VOICES.md",
+    "build_book.py",
+    "test_validate.py",
     "validate.py",
 }
 CANONICAL_TITLE = "# The Pursuit of Happiness over Hubris"
@@ -33,6 +37,14 @@ VOICE_MARKERS = {
     "**Voice: AI.**": "AI",
 }
 UNWRITTEN_SLOT = "_Unwritten. Justichuu writes here._"
+DRAFT_STATUS = re.compile(
+    r"^Status: living public draft, version (\d+\.\d+\.\d+)\s*$",
+    re.MULTILINE,
+)
+PRODUCT_STATUS = re.compile(
+    r"^Status: product release, version (\d+\.\d+\.\d+)\s*$",
+    re.MULTILINE,
+)
 TEXT_SUFFIXES = {".md", ".py", ".yml", ".gitignore"}
 LONG_DASHES = {"\u2013", "\u2014"}
 PRIVATE_PATH_SHAPES = (
@@ -53,7 +65,7 @@ SECRET_SHAPES = (
 )
 
 
-SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache"}
+SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache", "release"}
 
 
 def public_files() -> List[Path]:
@@ -116,6 +128,10 @@ def validate_book(failures: List[str]) -> None:
             fail("BOOK.md", "canonical-title-missing", failures)
         if "## Comedy Gold" not in book_text:
             fail("BOOK.md", "comedy-gold-section-missing", failures)
+        draft = DRAFT_STATUS.search(book_text)
+        product = PRODUCT_STATUS.search(book_text)
+        if bool(draft) == bool(product):
+            fail("BOOK.md", "book-status-missing", failures)
 
 
 def strip_fences(text: str) -> tuple:
@@ -240,6 +256,86 @@ def validate_voices(failures: List[str]) -> None:
         validate_voice_rules(name, body, failures)
 
 
+def reserved_slot_count() -> int:
+    """Count reserved human slots still waiting in strict chapters."""
+    reserved = 0
+    for _, body in strict_chapters():
+        if body is None:
+            continue
+        for _, block in voice_blocks(body)[0]:
+            if UNWRITTEN_SLOT in prose_of(block):
+                reserved += 1
+    return reserved
+
+
+def book_edition_kind() -> str:
+    """Return draft, product, or missing for the BOOK.md status line."""
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return "missing"
+    text = book.read_text(encoding="utf-8")
+    draft = DRAFT_STATUS.search(text)
+    product = PRODUCT_STATUS.search(text)
+    if draft and not product:
+        return "draft"
+    if product and not draft:
+        return "product"
+    return "missing"
+
+
+def product_version() -> str:
+    """Return the whole-book product version, or an empty string."""
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return ""
+    match = PRODUCT_STATUS.search(book.read_text(encoding="utf-8"))
+    if match:
+        return match.group(1)
+    return ""
+
+
+def edition_version() -> str:
+    """Return the version number from the draft or product status line."""
+    if product_version():
+        return product_version()
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return ""
+    match = DRAFT_STATUS.search(book.read_text(encoding="utf-8"))
+    if match:
+        return match.group(1)
+    return ""
+
+
+def book_chapter_records() -> List[tuple]:
+    """Return each BOOK.md chapter title with its raw body text."""
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return []
+    lines, unclosed = strip_fences(book.read_text(encoding="utf-8"))
+    if unclosed:
+        return []
+    return [(title, "\n".join(body)) for title, body in chapters(lines)]
+
+
+def complete_chapter_titles() -> List[str]:
+    """Return BOOK.md chapters that contain no reserved unwritten slot."""
+    return [
+        title
+        for title, body in book_chapter_records()
+        if UNWRITTEN_SLOT not in body
+    ]
+
+
+def incomplete_chapter_titles() -> List[str]:
+    """Return BOOK.md chapters that still hold a reserved unwritten slot."""
+    return [
+        title
+        for title, body in book_chapter_records()
+        if UNWRITTEN_SLOT in body
+    ]
+
+
 def voice_ledger() -> List[str]:
     """Return one report line per voice plus the reserved-slot count."""
     counts = {name: 0 for name in set(VOICE_MARKERS.values())}
@@ -256,6 +352,14 @@ def voice_ledger() -> List[str]:
     lines = [f"{voice}: {counts[voice]} words" for voice in sorted(counts)]
     lines.append(f"Reserved slots awaiting Justichuu: {reserved}")
     return lines
+
+
+def validate_product_release(failures: List[str]) -> None:
+    """Ship completed chapters; refuse a whole-book claim that is still open."""
+    if not complete_chapter_titles():
+        fail("BOOK.md", "no-complete-chapter-to-release", failures)
+    if book_edition_kind() == "product" and incomplete_chapter_titles():
+        fail("BOOK.md", "product-status-claims-unfinished-book", failures)
 
 
 def validate_incident(failures: List[str]) -> None:
@@ -295,6 +399,8 @@ def main(argv: List[str]) -> int:
     validate_book(failures)
     validate_incident(failures)
     validate_voices(failures)
+    if "--release" in argv:
+        validate_product_release(failures)
     return report(failures, len(actual))
 
 

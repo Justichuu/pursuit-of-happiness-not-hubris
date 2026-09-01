@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+- Added the irony-mark chapter with separated voices: a labeled AI essay on
+  the unused reversed question mark, the shared failure to define irony, and
+  the request to ghostwrite that essay in the author's name. Three slots are
+  reserved for Justichuu. The machine text stays labeled and does not draft
+  his replies.
+- Added Justichuu's selected line to Comedy Gold, and replaced the AI hedge
+  "would have been my words" with his present-tense correction that they
+  already are.
+- Added his next selected line, that irony is an undefinable
+  function/number and he does not know which, to Comedy Gold and to a
+  labeled AI section that maps both pictures and refuses to close the
+  slash.
+- Added "Feels undefined" as a selected fragment, and withdrew the AI claim
+  that undefined was not his word. The labeled reply keeps "feels" as a
+  report, not a type.
+- Added "Seems legit" as a selected fragment. The labeled reply refuses to
+  read the stamp as confirmation that the essay is true.
+- Added "Addicted to irony" as a selected fragment. The labeled reply
+  treats it as a named loop, not a habit drafted in his voice.
+- Added the product-release gate: a book-page PDF may call itself a
+  product only after Justichuu fills every reserved slot and changes the
+  BOOK.md status line. `validate.py --release` and `build_book.py
+  --release` refuse the cut until then. A draft PDF can be built for
+  layout and is marked as not a product. The tooling has no final
+  version. A new chapter asks him whether the book never ends.
+- Redefined a product release as completed chapters. Unfinished chapters
+  stay in the living draft. His selected line naming that rule is in
+  Comedy Gold. `--release` now ships only chapters with no reserved slot.
+- Fixed the Python 3.8 pylint failure in the book PDF builder by packing
+  line style into one argument.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
