@@ -239,6 +239,8 @@ Justichuu, selected 1 September 2026.
 ## Ironic humor
 
 > Ironic humor?
+>
+> The carbuncle ate itself
 
 Justichuu, selected 1 September 2026.
 
