@@ -208,6 +208,10 @@ AI editorial note from the ego chapter, selected by Justichuu on August 29,
 
 Justichuu, selected 30 August 2026.
 
+## Dramedy
+
+Dramedy keeps the lines that reveal a real idea because they are sad and funny.
+
 ### Seventeen seconds of noice
 
 > Noice
@@ -221,6 +225,8 @@ AI reply in the same chat, after 17 seconds of work.
 > That's sad and funny
 >
 > Work was done for 17 seconds to produce the noice
+>
+> Dramedy
 
 Justichuu, on the same exchange, selected 1 September 2026.
 

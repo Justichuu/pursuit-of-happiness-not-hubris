@@ -17,7 +17,8 @@ belongs here.
 ## What is public
 
 - The title, thesis, and selected writing that the author intentionally releases
-- The Comedy Gold section, with exact attribution for every quoted fragment
+- The Comedy Gold and Dramedy sections, with exact attribution for every quoted
+  fragment
 - The publication boundary, [voice separation rule](VOICES.md), and contribution
   rules
 - The name-free [publication incident record](INCIDENT.md)
