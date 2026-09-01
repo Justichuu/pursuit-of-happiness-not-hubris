@@ -230,6 +230,12 @@ AI reply in the same chat, after 17 seconds of work.
 
 Justichuu, on the same exchange, selected 1 September 2026.
 
+## Andromedy
+
+> Andromedy: in between Dramedy and men
+
+Justichuu, selected 1 September 2026.
+
 ## What this book will not pretend
 
 - It will not promise that a product, model, drug, investment, or philosophy
