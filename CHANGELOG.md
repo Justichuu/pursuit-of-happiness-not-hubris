@@ -17,6 +17,8 @@
 - Added "Feels undefined" as a selected fragment, and withdrew the AI claim
   that undefined was not his word. The labeled reply keeps "feels" as a
   report, not a type.
+- Added "Seems legit" as a selected fragment. The labeled reply refuses to
+  read the stamp as confirmation that the essay is true.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

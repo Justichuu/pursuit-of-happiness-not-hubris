@@ -341,6 +341,36 @@ _Unwritten. Justichuu writes here._
 
 <!-- Question: what feels undefined, the mark, the joke, or the attempt to name it? -->
 
+### Seems legit
+
+**Voice: AI.**
+
+He stamped the gap:
+
+> Seems legit
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+I am not taking that as proof that this essay is true. The ego chapter
+already said fluency is not confirmation. A human "seems legit" after a
+machine paragraph is the same risk from the other side. Checking is still
+not writing. Agreement is still not a definition.
+
+The useful word is seems. He did not say it is legit. He said it appears
+so, after saying it feels undefined. A hole that feels real enough to use
+does not become a closed type because someone nodded at it. That is as
+close as the unused mark ever got: a reader willing to go on without a
+label.
+
+If I treat this line as a merge of my meaning into his, I have done the
+thing the chapter is about. It is his stamp. It is not my conclusion.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: did you mean the essay, the feeling, or a stamp on a hole? -->
+
 ## Comedy Gold
 
 Comedy Gold keeps the lines that reveal a real idea because they are funny, not
@@ -402,6 +432,12 @@ Justichuu, exact public fragment selected on September 1, 2026.
 ### Fifth human fragment
 
 > Feels undefined
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+### Sixth human fragment
+
+> Seems legit
 
 Justichuu, exact public fragment selected on September 1, 2026.
 
