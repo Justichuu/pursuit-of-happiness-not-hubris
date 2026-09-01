@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Opened Dramedy, Andromedy, and Ironic humor as voice-separated chapters in
+  the same Markdown page format as the ego chapter: selected lines stay in
+  Justichuu's voice, citations and the 17-second reply stay in AI voice.
+  Book draft 0.1.2.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

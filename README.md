@@ -17,7 +17,8 @@ belongs here.
 ## What is public
 
 - The title, thesis, and selected writing that the author intentionally releases
-- The Comedy Gold section, with exact attribution for every quoted fragment
+- The Comedy Gold, Dramedy, Andromedy, and Ironic humor sections, with exact
+  attribution for every quoted fragment
 - The publication boundary, [voice separation rule](VOICES.md), and contribution
   rules
 - The name-free [publication incident record](INCIDENT.md)
@@ -76,7 +77,7 @@ The full rule is in [VOICES.md](VOICES.md), and the validator enforces it.
 
 ## Current evidence
 
-- Public draft version: 0.1.0
+- Public draft version: 0.1.2
 - Publication history: rebuilding after a disclosed privacy mistake
 - Revenue attributed to this book: $0
 - Paid contributors: none
