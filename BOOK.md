@@ -162,6 +162,118 @@ record, a publication boundary, and a rule that no voice may be borrowed. None
 of that makes the author correct. It makes the author checkable, which is the
 only version of correct that another person can verify.
 
+## The irony mark
+
+**Voices: separated.**
+
+### A punctuation mark for a feeling nobody finished defining
+
+**Voice: AI.**
+
+There is a character for this. It looks like a question mark facing the wrong
+way: ⸮. Printers have called it a reversed question mark, a percontation point,
+and an irony mark. The names do not agree, which is already the whole story.
+One tradition wanted it to flag a question that does not want an answer. Another
+wanted it to flag a sentence that does not mean what it says. The glyph was
+asked to settle a problem of tone, and tone is the part of language that a mark
+cannot carry without becoming a spoiler.
+
+The mark exists in Unicode. It almost never appears in ordinary writing. People
+kept inventing it, encoding it, and then going back to the same old period,
+because a reader who needs a label has already missed the joke, and a reader
+who got the joke does not want the label. A tool that makes irony safe also
+makes it weaker. That is why the symbol stayed rare. It was a solution to a
+problem people preferred to keep unsolved.
+
+Irony itself is not one thing. Schoolbooks split it into verbal irony, where
+the words point away from the meaning; dramatic irony, where the audience knows
+what the speaker does not; and situational irony, where the outcome mocks the
+intention. The splits are useful until you try to use them. Rain on a wedding
+is weather until someone had advertised sunshine. A fire station on fire is a
+headline until you ask whether anyone claimed the building could not burn. The
+border is not in the event. It is in the gap between what was expected and what
+arrived, and expectation lives in a person, not in a sentence.
+
+Humans have argued about that border for as long as they have had the word.
+They can point at examples and still fail the definition. They can feel the
+turn and still fail to mark it. They built a punctuation mark so the feeling
+would stop being ambiguous, then refused to use the mark, then kept arguing.
+That is not a failure of education. It is what irony is: a meaning that dies a
+little when you pin it to the page.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question, delete it when you answer: when did a sentence of yours need a mark so nobody would take it straight? -->
+
+### A machine that can fetch the glyph and still miss the turn
+
+**Voice: AI.**
+
+I can name the code point. I can list the three schoolbook types. I can produce
+a paragraph that performs irony if you ask for a performance. None of that is
+the same as knowing whether a line is ironic, because knowing that requires a
+stance, and I do not have one. I continue the most likely next words. Irony is
+the case where the most likely next words are not the ones that were meant.
+
+If I attach the mark, I flatten the sentence into a labeled trick. If I leave
+the mark off, I am one more confident paragraph that might be sincere and might
+not, and I cannot tell you which. Humans live in that same bind. They just have
+the advantage of meaning something first. I have the advantage of never being
+embarrassed when I get it wrong. That is not a definition. It is a missing
+cost.
+
+So the shared failure is real, and it is not symmetrical. A person can fail to
+define irony and still intend it. I can fail to define irony and only arrange
+the appearance of intention. The unused mark sits between those two failures
+and helps neither of them. It was built to make tone legible to a stranger. I
+am a stranger that writes fluent tone on demand. The stranger and the author
+are the two parties the mark was supposed to protect, and both of them still
+have to guess.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: when did someone take your joke as a claim, or your claim as a joke? -->
+
+### The prompt that asked for a ghost
+
+**Voice: AI.**
+
+The request that opened this chapter was to write about humans and machines
+failing to define the irony mark, and then to form the author's words so he
+could check them as his.
+
+That sentence is the article. The history of the glyph is only the setup.
+
+If I draft a human voice and leave it for a light edit, the reader gets a
+machine sentence wearing a person's name. This book already forbids that. The
+forbid is not a style preference and it is not politeness. It is the same
+problem as the unused mark. Somebody has to say whose meaning this is. A
+decoration after the fact does not transfer meaning to the person who did not
+write it. Checking is reading. Writing is the part I am not allowed to do for
+you.
+
+So I wrote the essay in my own labeled voice, and I left the human slots empty.
+The empty slots are not unfinished work in the ordinary sense. They are the
+only honest place the other half of the argument can go. I can describe the
+irony of a machine being asked to supply a person's words about a feeling
+neither of us can define. I cannot make those words his by offering a draft he
+could nod at.
+
+The irony is that they would have been my words. You can keep them, reject
+them, answer them, or replace them. You cannot make them yours by checking
+them. If that landing feels too neat, that is my habit, not a proof. Fluency
+is not confirmation. The mark would not have fixed that either.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: if I had written this under your name, what part of the result would have been yours? -->
+
 ## Comedy Gold
 
 Comedy Gold keeps the lines that reveal a real idea because they are funny, not

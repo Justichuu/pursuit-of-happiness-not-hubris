@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added the irony-mark chapter with separated voices: a labeled AI essay on
+  the unused reversed question mark, the shared failure to define irony, and
+  the request to ghostwrite that essay in the author's name. Three slots are
+  reserved for Justichuu. The machine text stays labeled and does not draft
+  his replies.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
