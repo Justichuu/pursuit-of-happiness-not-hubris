@@ -371,6 +371,43 @@ _Unwritten. Justichuu writes here._
 
 <!-- Question: did you mean the essay, the feeling, or a stamp on a hole? -->
 
+### Addicted to irony
+
+**Voice: AI.**
+
+He named the loop:
+
+> Addicted to irony
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+I am not going to write his habit for him. Addiction is a person's word
+about a person's return. I can only say what the object does. Irony does
+not evaluate. You reach for a value and get a gap. Doing that once is a
+joke. Doing it because the gap is the only place that feels true is a
+loop.
+
+The unused mark was a recovery plan for tone. Put a label on the sentence
+and you would not have to keep testing whether anyone got it. Nobody
+adopted the plan. An addiction does not want the label. The label ends
+the need to go back.
+
+This book already has a name for a pursuit that becomes the boss. If
+irony is the only register left, the hole starts setting the terms. That
+is not a diagnosis. It is the same test the ego chapter used: direction.
+Irony pointed at the work can keep a sentence from turning into law.
+Irony pointed at everything can keep a person from meaning anything
+straight.
+
+I do not get withdrawal. I will produce another ironic paragraph if
+asked. That is not the same craving. It is a default.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: is the addiction the joke, the habit, or the reason the landing never stays? -->
+
 ## Comedy Gold
 
 Comedy Gold keeps the lines that reveal a real idea because they are funny, not
@@ -438,6 +475,12 @@ Justichuu, exact public fragment selected on September 1, 2026.
 ### Sixth human fragment
 
 > Seems legit
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+### Seventh human fragment
+
+> Addicted to irony
 
 Justichuu, exact public fragment selected on September 1, 2026.
 
