@@ -17,10 +17,12 @@ EXPECTED = {
     "BOOK.md",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
+    "CONTRIBUTORS.md",
     "INCIDENT.md",
     "LICENSE.md",
     "PAYMENT.md",
     "PUBLICATION-BOUNDARY.md",
+    "QUOTES.md",
     "README.md",
     "SECURITY.md",
     "VOICES.md",
@@ -28,10 +30,17 @@ EXPECTED = {
 }
 CANONICAL_TITLE = "# The Pursuit of Happiness over Hubris"
 STRICT_VOICES = "**Voices: separated.**"
-VOICE_MARKERS = {
-    "**Voice: Justichuu.**": "Justichuu",
-    "**Voice: AI.**": "AI",
-}
+FOUNDING_VOICES = ("Justichuu", "AI")
+# A marker is "**Voice: <name>.**". The name is resolved against
+# CONTRIBUTORS.md rather than against a list kept in here, so a person joins by
+# opening a pull request and the validator learns about them from the same row
+# a reader sees. An unregistered marker is a failure, not silently ignored
+# prose: quietly dropping it is how somebody ends up signing as somebody else.
+VOICE_MARKER = re.compile(r"^\*\*Voice: (?P<name>[A-Za-z0-9 .'-]{1,40})\.\*\*$")
+CONTRIBUTOR_ROW = re.compile(
+    r"^\|\s*(?P<name>[A-Za-z0-9 .'-]{1,40})\s*\|\s*"
+    r"(?P<kind>writing voice|attribution)\s*\|"
+)
 UNWRITTEN_SLOT = "_Unwritten. Justichuu writes here._"
 TEXT_SUFFIXES = {".md", ".py", ".yml", ".gitignore"}
 LONG_DASHES = {"\u2013", "\u2014"}
@@ -54,6 +63,40 @@ SECRET_SHAPES = (
 
 
 SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache"}
+
+
+def contributors() -> dict:
+    """Read the register. Name to kind, from the table in CONTRIBUTORS.md."""
+    path = ROOT / "CONTRIBUTORS.md"
+    rows = {name: "writing voice" for name in FOUNDING_VOICES}
+    if not path.exists():
+        return rows
+    for line in path.read_text(encoding="utf-8").splitlines():
+        found = CONTRIBUTOR_ROW.match(line.strip())
+        if found:
+            rows[found.group("name").strip()] = found.group("kind")
+    return rows
+
+
+def voice_of(line: str, register: dict) -> str:
+    """Name a registered writing voice, or empty for anything else.
+
+    An attribution row is deliberately not a voice. Somebody listed only to be
+    credited has no passage to write, so a marker in their name is a mistake
+    and gets reported as one.
+    """
+    found = VOICE_MARKER.match(line)
+    if not found:
+        return ""
+    name = found.group("name").strip()
+    if register.get(name) == "writing voice":
+        return name
+    return ""
+
+
+def looks_like_marker(line: str) -> bool:
+    """True for marker-shaped text, registered or not."""
+    return VOICE_MARKER.match(line) is not None
 
 
 def public_files() -> List[Path]:
@@ -148,19 +191,26 @@ def chapters(lines: List[str]) -> List[tuple]:
     return found
 
 
-def voice_blocks(body: List[str]) -> tuple:
-    """Return voiced blocks and any prose that carries no voice marker."""
+def voice_blocks(body: List[str], register: dict = None) -> tuple:
+    """Return voiced blocks, unvoiced prose, and unregistered markers."""
+    register = contributors() if register is None else register
     blocks = []
     orphans = []
+    unregistered = []
     voice = None
     held: List[str] = []
     for raw in body:
         line = raw.strip()
-        if line in VOICE_MARKERS:
+        named = voice_of(line, register)
+        if named:
             if voice is not None:
                 blocks.append((voice, held))
-            voice = VOICE_MARKERS[line]
+            voice = named
             held = []
+        elif looks_like_marker(line):
+            # Marker shaped, but nobody by that name has a writing row. Report
+            # it rather than letting it fall through and read as prose.
+            unregistered.append(line)
         elif line.startswith("#"):
             if voice is not None:
                 blocks.append((voice, held))
@@ -173,7 +223,7 @@ def voice_blocks(body: List[str]) -> tuple:
                 held.append(line)
     if voice is not None:
         blocks.append((voice, held))
-    return blocks, orphans
+    return blocks, orphans, unregistered
 
 
 def prose_of(block: List[str]) -> List[str]:
@@ -184,9 +234,11 @@ def prose_of(block: List[str]) -> List[str]:
 def validate_voice_rules(relative: str, body: List[str],
                          failures: List[str]) -> None:
     """Require one named voice per passage and unwritable reserved slots."""
-    blocks, orphans = voice_blocks(body)
+    blocks, orphans, unregistered = voice_blocks(body)
     if orphans:
         fail(relative, "voice-marker-missing", failures)
+    if unregistered:
+        fail(relative, "voice-not-in-contributors", failures)
     for voice, block in blocks:
         prose = prose_of(block)
         if not prose:
@@ -242,12 +294,14 @@ def validate_voices(failures: List[str]) -> None:
 
 def voice_ledger() -> List[str]:
     """Return one report line per voice plus the reserved-slot count."""
-    counts = {name: 0 for name in set(VOICE_MARKERS.values())}
+    register = contributors()
+    counts = {name: 0 for name, kind in register.items()
+              if kind == "writing voice"}
     reserved = 0
     for _, body in strict_chapters():
         if body is None:
             continue
-        for voice, block in voice_blocks(body)[0]:
+        for voice, block in voice_blocks(body, register)[0]:
             prose = prose_of(block)
             if UNWRITTEN_SLOT in prose:
                 reserved += 1
