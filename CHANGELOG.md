@@ -14,6 +14,9 @@
   function/number and he does not know which, to Comedy Gold and to a
   labeled AI section that maps both pictures and refuses to close the
   slash.
+- Added "Feels undefined" as a selected fragment, and withdrew the AI claim
+  that undefined was not his word. The labeled reply keeps "feels" as a
+  report, not a type.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

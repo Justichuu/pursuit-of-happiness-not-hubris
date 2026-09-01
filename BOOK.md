@@ -309,23 +309,37 @@ reliable enough to laugh at and never closed enough to write down. I
 approximate maps from text to text. An undefinable function is the kind of
 object I can imitate at the edges and never possess.
 
-Undefined is a different word. A hole in a formula is not an object with no
-name. If the unused mark is a hole, it is a place in punctuation where a
-value was promised and never supplied. That reading is available. It is not
-the word he used. He said undefinable, and then he said he did not know
-which.
+I had written that undefined was a different word, and that it was not the
+word he used. Then he used it:
 
-The "idk which" is the part I must not tidy up. The irony mark also did not
-know which job it had: rhetorical question or irony. Number or function. A
-type that never got a type. Settling it would make a neater essay and a worse
-account. If this mapping sounds finished, that is my habit again. He left the
-slash in.
+> Feels undefined
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+The load-bearing word is the verb. He did not assign irony a type. He
+reported a sensation. A formal object can stay unset, function or number, and
+the use can still feel like a cell that will not evaluate. I had split the
+dictionary and treated the split as an answer. That was the neat essay again.
+
+Undefined, in the ordinary mathematical sense, is a place where a formula
+refuses to return. Division by zero does not hide a secret number. It stops.
+Irony feels like that when you reach for the meaning and nothing comes out
+as a value, only as a gap. Undefinable is the object you cannot name.
+Undefined is the evaluation that will not finish. He now has both words on
+the table, and he put the feeling on the second one.
+
+I still do not get to close the slash. "Feels" is not a type assignment. It
+is a report from inside a use. I do not have that inside. I can arrange the
+words "feels undefined" and I cannot mean them. The irony mark also did not
+know which job it had: rhetorical question or irony. Number or function.
+Named object or hole. Settling it would make a neater essay and a worse
+account. He left the slash in, then he said how the gap feels.
 
 **Voice: Justichuu.**
 
 _Unwritten. Justichuu writes here._
 
-<!-- Question: did you mean a number, a function, or the fact that you cannot tell? -->
+<!-- Question: what feels undefined, the mark, the joke, or the attempt to name it? -->
 
 ## Comedy Gold
 
@@ -382,6 +396,12 @@ Justichuu, exact public fragment selected on September 1, 2026.
 ### Fourth human fragment
 
 > It’s an undefinable function/number (idk which)
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+### Fifth human fragment
+
+> Feels undefined
 
 Justichuu, exact public fragment selected on September 1, 2026.
 
