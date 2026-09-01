@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added the seventeen-seconds-of-noice Comedy Gold fragment: a bot chat with
+  no other context, the 17-second echo, and Justichuu's note on the exchange.
+  Book draft 0.1.2.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

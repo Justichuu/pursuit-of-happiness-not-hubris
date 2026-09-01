@@ -2,7 +2,7 @@
 
 By Justichuu
 
-Status: living public draft, version 0.1.1
+Status: living public draft, version 0.1.2
 
 ## The thesis
 
@@ -207,6 +207,22 @@ AI editorial note from the ego chapter, selected by Justichuu on August 29,
 > thats not an idea thats peer pressure
 
 Justichuu, selected 30 August 2026.
+
+### Seventeen seconds of noice
+
+> Noice
+
+Justichuu, from a bot chat with no other context, selected 1 September 2026.
+
+> Noice.
+
+AI reply in the same chat, after 17 seconds of work.
+
+> That's sad and funny
+>
+> Work was done for 17 seconds to produce the noice
+
+Justichuu, on the same exchange, selected 1 September 2026.
 
 ## What this book will not pretend
 

@@ -76,7 +76,7 @@ The full rule is in [VOICES.md](VOICES.md), and the validator enforces it.
 
 ## Current evidence
 
-- Public draft version: 0.1.0
+- Public draft version: 0.1.2
 - Publication history: rebuilding after a disclosed privacy mistake
 - Revenue attributed to this book: $0
 - Paid contributors: none
