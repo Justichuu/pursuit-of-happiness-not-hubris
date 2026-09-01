@@ -2,17 +2,10 @@
 
 ## Unreleased
 
-- Opened the Dramedy section for lines that are sad and funny, and placed the
-  seventeen-seconds-of-noice fragment there: a bot chat with no other context,
-  the 17-second echo, and Justichuu's notes on the exchange.
-- Opened the Andromedy section with Justichuu's exact line: in between Dramedy
-  and men.
-- Opened the Ironic humor section with Justichuu's exact question, unanswered,
-  the Sonic Shuffle in-game line The Carbuncle ate itself, cited as the Game
-  Grumps Part 2 reference, and his present-tense humor note pointing at a
-  2005 upload of Anal Cunt's 1997 track without reprinting lyrics, and the
-  selected line Schweet, the chat-surprise line, and the note that LLMs are
-  ahead of your time: latency issues. Book draft 0.1.2.
+- Opened Dramedy, Andromedy, and Ironic humor as voice-separated chapters in
+  the same Markdown page format as the ego chapter: selected lines stay in
+  Justichuu's voice, citations and the 17-second reply stay in AI voice.
+  Book draft 0.1.2.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

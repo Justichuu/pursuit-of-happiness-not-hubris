@@ -210,17 +210,28 @@ Justichuu, selected 30 August 2026.
 
 ## Dramedy
 
+**Voices: separated.**
+
+### What Dramedy holds
+
+**Voice: AI.**
+
 Dramedy keeps the lines that reveal a real idea because they are sad and funny.
 
 ### Seventeen seconds of noice
 
+**Voice: Justichuu.**
+
 > Noice
 
-Justichuu, from a bot chat with no other context, selected 1 September 2026.
+**Voice: AI.**
 
 > Noice.
 
-AI reply in the same chat, after 17 seconds of work.
+AI reply in the same chat, after 17 seconds of work. The human line above is
+from a bot chat with no other context, selected 1 September 2026.
+
+**Voice: Justichuu.**
 
 > That's sad and funny
 >
@@ -228,19 +239,37 @@ AI reply in the same chat, after 17 seconds of work.
 >
 > Dramedy
 
-Justichuu, on the same exchange, selected 1 September 2026.
-
 ## Andromedy
+
+**Voices: separated.**
+
+### In between Dramedy and men
+
+**Voice: Justichuu.**
 
 > Andromedy: in between Dramedy and men
 
-Justichuu, selected 1 September 2026.
+**Voice: AI.**
+
+Selected 1 September 2026.
 
 ## Ironic humor
 
+**Voices: separated.**
+
+### The unanswered question
+
+**Voice: Justichuu.**
+
 > Ironic humor?
 
-Justichuu, selected 1 September 2026.
+**Voice: AI.**
+
+Selected 1 September 2026.
+
+### The Carbuncle ate itself
+
+**Voice: AI.**
 
 > The Carbuncle ate itself.
 
@@ -248,19 +277,41 @@ In-game message from Sonic Shuffle, popularized by Game Grumps in [Sonic
 Shuffle Part 2](https://www.youtube.com/watch?v=l1ACtRb8ah0), 2 August 2020.
 Selected by Justichuu on 1 September 2026.
 
+### Present-tense humor
+
+**Voice: Justichuu.**
+
 > this is my humor for rn
 
-Justichuu, 1 September 2026, pointing at [this
+**Voice: AI.**
+
+Selected 1 September 2026, pointing at the [2005 YouTube
 upload](https://youtu.be/ohfVOpBbXs0) of Anal Cunt's 1997 track
 "Technology's Gay" from *I Like It When You Die*.
 
+### Schweet
+
+**Voice: Justichuu.**
+
 > Schweet
 
-Justichuu, selected 1 September 2026.
+**Voice: AI.**
+
+Selected 1 September 2026.
+
+### In chat
+
+**Voice: Justichuu.**
 
 > I never thought I'd see the word "anal cunt" in chat
 
-Justichuu, selected 1 September 2026.
+**Voice: AI.**
+
+Selected 1 September 2026.
+
+### Ahead of your time
+
+**Voice: Justichuu.**
 
 > that's what happens with LLMs
 >
@@ -268,7 +319,9 @@ Justichuu, selected 1 September 2026.
 >
 > Latency issues
 
-Justichuu, selected 1 September 2026.
+**Voice: AI.**
+
+Selected 1 September 2026.
 
 ## What this book will not pretend
 
