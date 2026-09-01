@@ -10,8 +10,8 @@
 - Opened the Ironic humor section with Justichuu's exact question, unanswered,
   the Sonic Shuffle in-game line The Carbuncle ate itself, cited as the Game
   Grumps Part 2 reference, and his present-tense humor note pointing at a
-  2005 upload of Anal Cunt's 1997 track without reprinting lyrics. Book draft
-  0.1.2.
+  2005 upload of Anal Cunt's 1997 track without reprinting lyrics, and the
+  selected line Schweet. Book draft 0.1.2.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no

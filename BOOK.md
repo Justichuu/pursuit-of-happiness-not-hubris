@@ -254,6 +254,10 @@ Justichuu, 1 September 2026, pointing at [this
 upload](https://youtu.be/ohfVOpBbXs0) of Anal Cunt's 1997 track
 "Technology's Gay" from *I Like It When You Die*.
 
+> Schweet
+
+Justichuu, selected 1 September 2026.
+
 ## What this book will not pretend
 
 - It will not promise that a product, model, drug, investment, or philosophy
