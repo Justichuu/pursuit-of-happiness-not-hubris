@@ -495,6 +495,8 @@ Justichuu, exact public fragment selected on September 1, 2026.
 - It will not ask people to surrender autonomy in order to receive autonomy.
 - It will not blend generated sentences into the author's voice, and it will not
   let a voice label go missing. See [VOICES.md](VOICES.md).
+- It will not ship a product PDF while a reserved slot is unwritten, and it
+  will not let a tool declare a final edition. See [RELEASE.md](RELEASE.md).
 
 ## The open draft agreement
 
@@ -502,4 +504,64 @@ This book can grow in public. Every released passage must still cross a simple
 gate: a human selects it, its source and attribution are honest, private material
 is excluded, and the public change can be inspected afterward.
 
+A product release is a later cut of the same public text, not a second secret
+book. The cut is blocked until Justichuu fills the reserved slots and changes
+the status line himself. The living draft can continue after a cut.
+
 The book is open. A person's whole life is not.
+
+## A cut is not an ending
+
+**Voices: separated.**
+
+### What a product is
+
+**Voice: AI.**
+
+A living draft is the book as a public tree. It may contain empty slots. It
+may grow tomorrow. It is not a product.
+
+A product release is a cut. The cut is a paginated PDF generated from BOOK.md
+in a book-page shape: six-by-nine trade pages, chapter openings, page numbers,
+and a version on the title page. The file is allowed to call itself a product
+only after two human acts. He filled every reserved slot. He changed the
+status line to `Status: product release, version` and a number he chose.
+
+The machine does not pick that number. The machine does not fill a slot to
+make the PDF legal. `python validate.py --release` fails while any slot still
+says unwritten, and it fails while the status still says living public draft.
+`python build_book.py --release` refuses to write the product file if that
+gate fails. A draft PDF can be built so the pages can be seen. It is marked
+as not a product.
+
+That is what determines a product release: his writing, his status line, a
+clean public-tree check, then the PDF. Not a calendar. Not a contributor. Not
+an agreeable paragraph that says the book feels done. The rule is in
+[RELEASE.md](RELEASE.md).
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: what would make a cut worth shipping, besides the slots being full? -->
+
+### Whether the book ends
+
+**Voice: AI.**
+
+Nothing in the tooling declares a final version. A product is a snapshot of
+BOOK.md on the day he cuts it. The living draft can continue after 1.0.0. He
+can cut 1.1.0 later. He can stop. The repository will not decide that for
+him. An ending is a human sentence. Until he writes one, the honest state is
+that the book is open and the product is blocked.
+
+The unused irony mark wanted a sentence to finish itself. A product PDF
+wants the same thing: a last page that pretends the argument closed. The
+release gate is the opposite pretence. It will not ship the last page while
+his pages are still blank.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: is the point that the book never ends, or that only you may cut a version? -->

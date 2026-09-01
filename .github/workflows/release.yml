@@ -1,0 +1,48 @@
+name: Product release PDF
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  product-pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    - name: Validate the public tree
+      run: python validate.py
+    - name: Enforce the product-release gate
+      run: python validate.py --release
+    - name: Build the product PDF
+      run: python build_book.py --release
+    - name: Upload the product PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: book-product-release
+        path: release/pursuit-of-happiness-over-hubris-v*.pdf
+
+  draft-pdf:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    - name: Build a marked draft PDF
+      run: python build_book.py --draft
+    - name: Upload the draft PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: book-draft-not-a-product
+        path: release/*DRAFT.pdf

@@ -13,6 +13,7 @@ EXPECTED = {
     ".gitignore",
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/workflows/pylint.yml",
+    ".github/workflows/release.yml",
     "ACCESSIBILITY.md",
     "BOOK.md",
     "CHANGELOG.md",
@@ -22,8 +23,11 @@ EXPECTED = {
     "PAYMENT.md",
     "PUBLICATION-BOUNDARY.md",
     "README.md",
+    "RELEASE.md",
     "SECURITY.md",
     "VOICES.md",
+    "build_book.py",
+    "test_validate.py",
     "validate.py",
 }
 CANONICAL_TITLE = "# The Pursuit of Happiness over Hubris"
@@ -33,6 +37,14 @@ VOICE_MARKERS = {
     "**Voice: AI.**": "AI",
 }
 UNWRITTEN_SLOT = "_Unwritten. Justichuu writes here._"
+DRAFT_STATUS = re.compile(
+    r"^Status: living public draft, version (\d+\.\d+\.\d+)\s*$",
+    re.MULTILINE,
+)
+PRODUCT_STATUS = re.compile(
+    r"^Status: product release, version (\d+\.\d+\.\d+)\s*$",
+    re.MULTILINE,
+)
 TEXT_SUFFIXES = {".md", ".py", ".yml", ".gitignore"}
 LONG_DASHES = {"\u2013", "\u2014"}
 PRIVATE_PATH_SHAPES = (
@@ -53,7 +65,7 @@ SECRET_SHAPES = (
 )
 
 
-SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache"}
+SKIP_DIR_NAMES = {".git", "__pycache__", ".pytest_cache", "release"}
 
 
 def public_files() -> List[Path]:
@@ -116,6 +128,10 @@ def validate_book(failures: List[str]) -> None:
             fail("BOOK.md", "canonical-title-missing", failures)
         if "## Comedy Gold" not in book_text:
             fail("BOOK.md", "comedy-gold-section-missing", failures)
+        draft = DRAFT_STATUS.search(book_text)
+        product = PRODUCT_STATUS.search(book_text)
+        if bool(draft) == bool(product):
+            fail("BOOK.md", "book-status-missing", failures)
 
 
 def strip_fences(text: str) -> tuple:
@@ -240,6 +256,44 @@ def validate_voices(failures: List[str]) -> None:
         validate_voice_rules(name, body, failures)
 
 
+def reserved_slot_count() -> int:
+    """Count reserved human slots still waiting in strict chapters."""
+    reserved = 0
+    for _, body in strict_chapters():
+        if body is None:
+            continue
+        for _, block in voice_blocks(body)[0]:
+            if UNWRITTEN_SLOT in prose_of(block):
+                reserved += 1
+    return reserved
+
+
+def book_edition_kind() -> str:
+    """Return draft, product, or missing for the BOOK.md status line."""
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return "missing"
+    text = book.read_text(encoding="utf-8")
+    draft = DRAFT_STATUS.search(text)
+    product = PRODUCT_STATUS.search(text)
+    if draft and not product:
+        return "draft"
+    if product and not draft:
+        return "product"
+    return "missing"
+
+
+def product_version() -> str:
+    """Return the product version from BOOK.md, or an empty string."""
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return ""
+    match = PRODUCT_STATUS.search(book.read_text(encoding="utf-8"))
+    if match:
+        return match.group(1)
+    return ""
+
+
 def voice_ledger() -> List[str]:
     """Return one report line per voice plus the reserved-slot count."""
     counts = {name: 0 for name in set(VOICE_MARKERS.values())}
@@ -256,6 +310,17 @@ def voice_ledger() -> List[str]:
     lines = [f"{voice}: {counts[voice]} words" for voice in sorted(counts)]
     lines.append(f"Reserved slots awaiting Justichuu: {reserved}")
     return lines
+
+
+def validate_product_release(failures: List[str]) -> None:
+    """Refuse a product cut while slots are empty or the status is a draft."""
+    if book_edition_kind() != "product":
+        fail("BOOK.md", "product-status-missing", failures)
+    if reserved_slot_count() != 0:
+        fail("BOOK.md", "reserved-slots-block-product-release", failures)
+    book = ROOT / "BOOK.md"
+    if book.exists() and UNWRITTEN_SLOT in book.read_text(encoding="utf-8"):
+        fail("BOOK.md", "unwritten-slot-blocks-product-release", failures)
 
 
 def validate_incident(failures: List[str]) -> None:
@@ -295,6 +360,8 @@ def main(argv: List[str]) -> int:
     validate_book(failures)
     validate_incident(failures)
     validate_voices(failures)
+    if "--release" in argv:
+        validate_product_release(failures)
     return report(failures, len(actual))
 
 
