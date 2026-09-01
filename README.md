@@ -83,7 +83,7 @@ The full rule is in [VOICES.md](VOICES.md), and the validator enforces it.
 - Human-authored foundation: title, thesis language, and the first selected
   Comedy Gold fragment
 - AI assistance: editing, repository structure, validation, labeled editorial
-  lines, and labeled passages in the ego chapter
+  lines, and labeled passages in the ego and irony-mark chapters
 - Voice accounting: run `python validate.py --voices` for the current word count
   of each voice and the number of slots still awaiting Justichuu
 
