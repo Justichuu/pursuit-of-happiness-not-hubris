@@ -248,6 +248,12 @@ In-game message from Sonic Shuffle, popularized by Game Grumps in [Sonic
 Shuffle Part 2](https://www.youtube.com/watch?v=l1ACtRb8ah0), 2 August 2020.
 Selected by Justichuu on 1 September 2026.
 
+> this is my humor for rn
+
+Justichuu, 1 September 2026, pointing at [this
+upload](https://youtu.be/ohfVOpBbXs0) of Anal Cunt's 1997 track
+"Technology's Gay" from *I Like It When You Die*.
+
 ## What this book will not pretend
 
 - It will not promise that a product, model, drug, investment, or philosophy
