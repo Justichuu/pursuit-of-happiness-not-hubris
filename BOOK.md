@@ -239,10 +239,14 @@ Justichuu, selected 1 September 2026.
 ## Ironic humor
 
 > Ironic humor?
->
-> The carbuncle ate itself
 
 Justichuu, selected 1 September 2026.
+
+> The Carbuncle ate itself.
+
+In-game message from Sonic Shuffle, popularized by Game Grumps in [Sonic
+Shuffle Part 2](https://www.youtube.com/watch?v=l1ACtRb8ah0), 2 August 2020.
+Selected by Justichuu on 1 September 2026.
 
 ## What this book will not pretend
 
