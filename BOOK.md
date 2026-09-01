@@ -323,6 +323,20 @@ Selected 1 September 2026.
 
 Selected 1 September 2026.
 
+## Random thrower
+
+**Voices: separated.**
+
+### Throwing without hands
+
+**Voice: Justichuu.**
+
+> Random thrower . Sometimes a person throwing without hands or using other parts of body
+
+**Voice: AI.**
+
+Selected 1 September 2026.
+
 ## What this book will not pretend
 
 - It will not promise that a product, model, drug, investment, or philosophy
