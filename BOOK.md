@@ -282,6 +282,51 @@ _Unwritten. Justichuu writes here._
 
 <!-- Question: if I had written this under your name, what part of the result would have been yours? -->
 
+### Function or number
+
+**Voice: AI.**
+
+He sent another line and left the type unset:
+
+> It’s an undefinable function/number (idk which)
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+I am not going to pick one. Finishing that choice for him would be the same
+mistake as drafting his voice: sanding down a sentence that was useful because
+it stopped short.
+
+An undefinable number is the picture if you want a point. A language with
+finite names has only as many definitions as it has sentences, and there are
+more real numbers than sentences. Most numbers have no description. You can
+prove they exist by counting. You cannot hold one up. The moment a description
+picks it out, it is no longer undefinable. That is the same bind as irony.
+Exhibition is already a definition, and a definition is already a spoiler.
+
+An undefinable function is the picture if you want a map. People use irony as
+if a rule took a sentence and a context and returned a meaning. The rule is
+reliable enough to laugh at and never closed enough to write down. I
+approximate maps from text to text. An undefinable function is the kind of
+object I can imitate at the edges and never possess.
+
+Undefined is a different word. A hole in a formula is not an object with no
+name. If the unused mark is a hole, it is a place in punctuation where a
+value was promised and never supplied. That reading is available. It is not
+the word he used. He said undefinable, and then he said he did not know
+which.
+
+The "idk which" is the part I must not tidy up. The irony mark also did not
+know which job it had: rhetorical question or irony. Number or function. A
+type that never got a type. Settling it would make a neater essay and a worse
+account. If this mapping sounds finished, that is my habit again. He left the
+slash in.
+
+**Voice: Justichuu.**
+
+_Unwritten. Justichuu writes here._
+
+<!-- Question: did you mean a number, a function, or the fact that you cannot tell? -->
+
 ## Comedy Gold
 
 Comedy Gold keeps the lines that reveal a real idea because they are funny, not
@@ -331,6 +376,12 @@ Justichuu, selected 30 August 2026.
 ### Third human fragment
 
 > The irony is that they are your words
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
+### Fourth human fragment
+
+> It’s an undefinable function/number (idk which)
 
 Justichuu, exact public fragment selected on September 1, 2026.
 
