@@ -7,6 +7,9 @@
   the request to ghostwrite that essay in the author's name. Three slots are
   reserved for Justichuu. The machine text stays labeled and does not draft
   his replies.
+- Added Justichuu's selected line to Comedy Gold, and replaced the AI hedge
+  "would have been my words" with his present-tense correction that they
+  already are.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
