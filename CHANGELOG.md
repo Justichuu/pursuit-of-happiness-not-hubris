@@ -10,6 +10,10 @@
 - Added Justichuu's selected line to Comedy Gold, and replaced the AI hedge
   "would have been my words" with his present-tense correction that they
   already are.
+- Added his next selected line, that irony is an undefinable
+  function/number and he does not know which, to Comedy Gold and to a
+  labeled AI section that maps both pictures and refuses to close the
+  slash.
 - Added the ego chapter with separated voices, labeled AI passages, and five
   slots reserved for Justichuu to write himself.
 - Added the voice separation rule in VOICES.md: one named voice per passage, no
