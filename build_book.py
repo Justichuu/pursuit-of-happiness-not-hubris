@@ -304,6 +304,22 @@ class BookPdf:
             self.stream = ""
 
 
+def filter_complete_chapters(
+    blocks: List[Tuple[str, str]],
+    complete: List[str],
+) -> List[Tuple[str, str]]:
+    """Keep front matter and only chapters with no reserved slot."""
+    allowed = set(complete)
+    kept: List[Tuple[str, str]] = []
+    include = True
+    for kind, text in blocks:
+        if kind == "chapter":
+            include = text in allowed
+        if kind in {"title", "author", "status"} or include:
+            kept.append((kind, text))
+    return kept
+
+
 def layout_front_matter(pdf: BookPdf, blocks: List[Tuple[str, str]]) -> None:
     """Lay out the title page, verso notice, and contents."""
     pdf.new_page(False)
@@ -322,22 +338,30 @@ def layout_front_matter(pdf: BookPdf, blocks: List[Tuple[str, str]]) -> None:
         pdf.add_gap(16)
         note = "This PDF is a layout draft. It is not a product release."
         pdf.add_lines(wrap_text(note, 11, pdf.content_width()), "F2", 11, 14)
+    else:
+        pdf.add_gap(16)
+        note = "Completed chapters. The living draft continues."
+        pdf.add_lines(wrap_text(note, 11, pdf.content_width()), "F2", 11, 14)
 
     pdf.new_page(False)
     pdf.add_lines(["A cut is not an ending"], "F2", 14, 18)
     pdf.add_gap(10)
     verso = (
-        "A product release is a numbered cut of BOOK.md, allowed only after "
-        "Justichuu fills every reserved slot and changes the status line to "
-        "product release. This file is generated from the public markdown. "
-        "The living draft can continue after a cut. Original text is offered "
-        "under CC BY-SA 4.0. See LICENSE.md."
+        "A product release is the completed chapters of BOOK.md. A chapter "
+        "ships when it holds no reserved unwritten slot. Unfinished chapters "
+        "stay in the living draft. This file is generated from the public "
+        "markdown. The book can continue after a cut. Original text is "
+        "offered under CC BY-SA 4.0. See LICENSE.md."
     )
     if pdf.draft:
         verso = (
-            "NOT A PRODUCT RELEASE. Reserved slots are still unwritten, or "
-            "the status line is still a living public draft. " + verso
+            "NOT A PRODUCT RELEASE. This layout includes unfinished "
+            "chapters. " + verso
         )
+    else:
+        titles = [text for kind, text in blocks if kind == "chapter"]
+        if titles:
+            verso += " Completed in this file: " + "; ".join(titles) + "."
     pdf.add_lines(wrap_text(verso, 11, pdf.content_width()), "F1", 11, 15)
     pdf.new_page(True)
     pdf.add_lines(["Contents"], "F2", 16, 22)
@@ -501,9 +525,9 @@ def build(argv: List[str]) -> int:
         if code != 0:
             print("Product PDF refused: validate.py --release failed.")
             return code
-        version = validate.product_version()
+        version = validate.edition_version()
         if not version:
-            print("Product PDF refused: no product version.")
+            print("Product PDF refused: no edition version.")
             return 1
         name = product_filename(version)
         draft = False
@@ -516,6 +540,10 @@ def build(argv: List[str]) -> int:
 
     markdown = SOURCE.read_text(encoding="utf-8")
     blocks = parse_blocks(markdown)
+    if release:
+        complete = validate.complete_chapter_titles()
+        blocks = filter_complete_chapters(blocks, complete)
+        print("Product chapters: " + ", ".join(complete))
     pdf = layout_book(blocks, draft)
     target = OUTPUT_DIR / name
     write_pdf(pdf, target)

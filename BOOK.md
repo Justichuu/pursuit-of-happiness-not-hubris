@@ -484,6 +484,12 @@ Justichuu, exact public fragment selected on September 1, 2026.
 
 Justichuu, exact public fragment selected on September 1, 2026.
 
+### Eighth human fragment
+
+> Completed chapters are a product release.
+
+Justichuu, exact public fragment selected on September 1, 2026.
+
 ## What this book will not pretend
 
 - It will not promise that a product, model, drug, investment, or philosophy
@@ -495,8 +501,8 @@ Justichuu, exact public fragment selected on September 1, 2026.
 - It will not ask people to surrender autonomy in order to receive autonomy.
 - It will not blend generated sentences into the author's voice, and it will not
   let a voice label go missing. See [VOICES.md](VOICES.md).
-- It will not ship a product PDF while a reserved slot is unwritten, and it
-  will not let a tool declare a final edition. See [RELEASE.md](RELEASE.md).
+- It will not ship an unfinished chapter as a product, and it will not let a
+  tool declare a final edition. See [RELEASE.md](RELEASE.md).
 
 ## The open draft agreement
 
@@ -504,9 +510,9 @@ This book can grow in public. Every released passage must still cross a simple
 gate: a human selects it, its source and attribution are honest, private material
 is excluded, and the public change can be inspected afterward.
 
-A product release is a later cut of the same public text, not a second secret
-book. The cut is blocked until Justichuu fills the reserved slots and changes
-the status line himself. The living draft can continue after a cut.
+A product release is the completed chapters of the same public text, not a
+second secret book. An unfinished chapter stays in the living draft. The draft
+can continue after a cut.
 
 The book is open. A person's whole life is not.
 
@@ -519,46 +525,45 @@ The book is open. A person's whole life is not.
 **Voice: AI.**
 
 A living draft is the book as a public tree. It may contain empty slots. It
-may grow tomorrow. It is not a product.
+may grow tomorrow. The unfinished chapters in it are not a product.
 
-A product release is a cut. The cut is a paginated PDF generated from BOOK.md
-in a book-page shape: six-by-nine trade pages, chapter openings, page numbers,
-and a version on the title page. The file is allowed to call itself a product
-only after two human acts. He filled every reserved slot. He changed the
-status line to `Status: product release, version` and a number he chose.
+He named the unit:
 
-The machine does not pick that number. The machine does not fill a slot to
-make the PDF legal. `python validate.py --release` fails while any slot still
-says unwritten, and it fails while the status still says living public draft.
-`python build_book.py --release` refuses to write the product file if that
-gate fails. A draft PDF can be built so the pages can be seen. It is marked
-as not a product.
+> Completed chapters are a product release.
 
-That is what determines a product release: his writing, his status line, a
-clean public-tree check, then the PDF. Not a calendar. Not a contributor. Not
-an agreeable paragraph that says the book feels done. The rule is in
+Justichuu, exact public fragment selected on September 1, 2026.
+
+A chapter is complete when it holds no reserved unwritten slot. Completing
+it is the cut. The product PDF is those chapters, in six-by-nine trade
+pages, generated from BOOK.md. Ego, irony, and this chapter stay out of
+that file until he writes in them. The thesis, Comedy Gold, and the other
+finished pages may ship now.
+
+The machine still cannot finish a chapter for him. Drafting his voice to
+clear a slot would be a fake completion. `python build_book.py --release`
+omits any chapter that still says unwritten. `python build_book.py --draft`
+can show the whole living book, marked as not a product. The rule is in
 [RELEASE.md](RELEASE.md).
 
 **Voice: Justichuu.**
 
 _Unwritten. Justichuu writes here._
 
-<!-- Question: what would make a cut worth shipping, besides the slots being full? -->
+<!-- Question: which finished chapter would you ship first? -->
 
 ### Whether the book ends
 
 **Voice: AI.**
 
-Nothing in the tooling declares a final version. A product is a snapshot of
-BOOK.md on the day he cuts it. The living draft can continue after 1.0.0. He
-can cut 1.1.0 later. He can stop. The repository will not decide that for
-him. An ending is a human sentence. Until he writes one, the honest state is
-that the book is open and the product is blocked.
+Nothing in the tooling declares a final version. A product of completed
+chapters can ship while the book is still a living draft. He can finish
+another chapter later and cut again. He can stop. The repository will not
+decide that for him. An ending is a human sentence.
 
-The unused irony mark wanted a sentence to finish itself. A product PDF
-wants the same thing: a last page that pretends the argument closed. The
-release gate is the opposite pretence. It will not ship the last page while
-his pages are still blank.
+The unused irony mark wanted a sentence to finish itself. A whole-book
+product would want the same thing: a last page that pretends the argument
+closed. Completed chapters do not require that pretence. They ship what is
+done and leave the hole in the draft.
 
 **Voice: Justichuu.**
 

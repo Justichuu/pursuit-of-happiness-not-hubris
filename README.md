@@ -53,8 +53,8 @@ To see how many words belong to each voice:
 python validate.py --voices
 ```
 
-A living draft may have empty human slots. A product release may not. The
-product gate and the book-page PDF builder are documented in
+Completed chapters are a product release. Unfinished chapters stay in the
+living draft. The gate and the book-page PDF builder are documented in
 [RELEASE.md](RELEASE.md):
 
 ```text
@@ -63,10 +63,9 @@ python build_book.py --draft
 python build_book.py --release
 ```
 
-`--release` fails until Justichuu fills every reserved slot and changes the
-BOOK.md status line to a product release. That failure is the gate. A draft
-PDF can be built for layout and is marked as not a product. There is no
-final version in the tooling. A product is a cut. The draft can continue.
+`--release` writes only chapters with no reserved unwritten slot. `--draft`
+builds the whole living book and marks it as not a product. There is no
+final version in the tooling. The draft can continue.
 
 ## License and contributions
 
@@ -100,7 +99,7 @@ The full rule is in [VOICES.md](VOICES.md), and the validator enforces it.
   Comedy Gold fragment
 - AI assistance: editing, repository structure, validation, labeled editorial
   lines, labeled passages in the ego, irony-mark, and cut chapters, and the
-  product-release gate that cannot ship while his slots are empty
+  product-release gate that ships completed chapters only
 - Voice accounting: run `python validate.py --voices` for the current word count
   of each voice and the number of slots still awaiting Justichuu
 

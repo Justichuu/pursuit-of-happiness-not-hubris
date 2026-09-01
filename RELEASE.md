@@ -1,49 +1,46 @@
 # Product release
 
-A living public draft and a product release are not the same object.
+Completed chapters are a product release.
 
-The draft is BOOK.md in this repository. It may contain reserved slots. It
-may grow tomorrow. It is the public book.
+The living draft is the whole BOOK.md. It may contain reserved slots. It
+may grow tomorrow.
 
-A product release is a numbered cut of that book: a paginated PDF in trade
-book pages, generated from the current BOOK.md, allowed to call itself a
-product only after Justichuu has done the human work the machine cannot do.
+A product is the subset that is done: every chapter that holds no
+`_Unwritten. Justichuu writes here._` placeholder, paginated as a
+six-by-nine trade PDF. Unfinished chapters stay in the draft. They are
+not in the product.
 
 ## What determines a product release
 
-All of these must be true at once:
+A chapter is complete when it has no reserved unwritten slot. Completing
+the chapter is the cut. The machine cannot complete a chapter by drafting
+his words.
 
-1. Every reserved Justichuu slot in a voice-separated chapter is filled by
-   him. The placeholder `_Unwritten. Justichuu writes here._` is gone.
-2. He changed the BOOK.md status line to exactly:
+`python validate.py --release` passes when the public tree is clean and
+at least one chapter is complete. It does not wait for every slot in the
+book. It does not require the whole book to change its status line.
 
-   `Status: product release, version X.Y.Z`
+`python build_book.py --release` then writes only those completed
+chapters. The filename uses the version already on the BOOK.md status
+line.
 
-   He chooses the number. A tool does not.
-3. `python validate.py` passes on the public tree.
-4. `python validate.py --release` passes. That command adds the product
-   rules on top of the ordinary checks.
-5. `python build_book.py --release` then writes the product PDF under
-   `release/`. The builder calls the release validator and refuses to write
-   a product file if the gate fails.
-
-No contributor merge, CI pass, or generated paragraph can stand in for
-steps 1 and 2. A draft PDF may be built for layout while slots are empty.
-It is marked `DRAFT` and `NOT A PRODUCT RELEASE`. It is not a product.
+If he later sets `Status: product release, version X.Y.Z`, that claims
+the whole book is the product. That claim fails while any chapter is
+still unfinished.
 
 ## What does not determine a product release
 
-- A calendar, a word count, or an AI saying the essay seems done
+- Shipping an unfinished chapter because the rest of the book is ready
 - Filling a reserved slot by drafting words for him to check as his
-- Tagging a Git commit without the status line and the filled slots
+- A calendar, a word count, or an AI saying the essay seems done
 - Revenue, a store listing, or a file that merely looks like a book
 
 ## Final version
 
-The tooling has no final version. A product is a snapshot. The living draft
-can continue after a cut, and another cut can follow. Whether the book
-should ever end is a sentence for Justichuu, not a status the machine may
-invent.
+The tooling has no final version. A product of completed chapters can
+ship while the book is still a living draft. Another chapter can be
+completed later and another PDF can follow. Whether the book should ever
+end is a sentence for Justichuu, not a status the machine may invent.
 
 ## Commands
 
@@ -55,5 +52,5 @@ python build_book.py --draft
 python build_book.py --release
 ```
 
-`--release` is expected to fail until he writes the slots and changes the
-status line. That failure is the gate working.
+`--draft` builds the whole living book and marks it as not a product.
+`--release` builds only completed chapters.

@@ -284,7 +284,7 @@ def book_edition_kind() -> str:
 
 
 def product_version() -> str:
-    """Return the product version from BOOK.md, or an empty string."""
+    """Return the whole-book product version, or an empty string."""
     book = ROOT / "BOOK.md"
     if not book.exists():
         return ""
@@ -292,6 +292,48 @@ def product_version() -> str:
     if match:
         return match.group(1)
     return ""
+
+
+def edition_version() -> str:
+    """Return the version number from the draft or product status line."""
+    if product_version():
+        return product_version()
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return ""
+    match = DRAFT_STATUS.search(book.read_text(encoding="utf-8"))
+    if match:
+        return match.group(1)
+    return ""
+
+
+def book_chapter_records() -> List[tuple]:
+    """Return each BOOK.md chapter title with its raw body text."""
+    book = ROOT / "BOOK.md"
+    if not book.exists():
+        return []
+    lines, unclosed = strip_fences(book.read_text(encoding="utf-8"))
+    if unclosed:
+        return []
+    return [(title, "\n".join(body)) for title, body in chapters(lines)]
+
+
+def complete_chapter_titles() -> List[str]:
+    """Return BOOK.md chapters that contain no reserved unwritten slot."""
+    return [
+        title
+        for title, body in book_chapter_records()
+        if UNWRITTEN_SLOT not in body
+    ]
+
+
+def incomplete_chapter_titles() -> List[str]:
+    """Return BOOK.md chapters that still hold a reserved unwritten slot."""
+    return [
+        title
+        for title, body in book_chapter_records()
+        if UNWRITTEN_SLOT in body
+    ]
 
 
 def voice_ledger() -> List[str]:
@@ -313,14 +355,11 @@ def voice_ledger() -> List[str]:
 
 
 def validate_product_release(failures: List[str]) -> None:
-    """Refuse a product cut while slots are empty or the status is a draft."""
-    if book_edition_kind() != "product":
-        fail("BOOK.md", "product-status-missing", failures)
-    if reserved_slot_count() != 0:
-        fail("BOOK.md", "reserved-slots-block-product-release", failures)
-    book = ROOT / "BOOK.md"
-    if book.exists() and UNWRITTEN_SLOT in book.read_text(encoding="utf-8"):
-        fail("BOOK.md", "unwritten-slot-blocks-product-release", failures)
+    """Ship completed chapters; refuse a whole-book claim that is still open."""
+    if not complete_chapter_titles():
+        fail("BOOK.md", "no-complete-chapter-to-release", failures)
+    if book_edition_kind() == "product" and incomplete_chapter_titles():
+        fail("BOOK.md", "product-status-claims-unfinished-book", failures)
 
 
 def validate_incident(failures: List[str]) -> None:

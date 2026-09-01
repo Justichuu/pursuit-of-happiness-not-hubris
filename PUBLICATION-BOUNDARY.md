@@ -32,13 +32,13 @@ conversations.
 
 ## Product release
 
-A living public draft may contain reserved slots. A product release may not.
+A living public draft may contain reserved slots. A product release is the
+completed chapters only.
 
-A product PDF is a paginated edition of the same public BOOK.md, not a paid
-secret file and not a final edition declared by a tool. It may be generated
-only when Justichuu has filled every reserved slot and has changed the status
-line to `Status: product release, version X.Y.Z`. The commands and the
-blocked states are in [RELEASE.md](RELEASE.md).
+A product PDF is a paginated edition of those finished chapters, not a paid
+secret file and not a final edition declared by a tool. A chapter that still
+holds `_Unwritten. Justichuu writes here._` stays out of the product. The
+commands are in [RELEASE.md](RELEASE.md).
 
 A draft PDF may be built for layout while the book is still a draft. It must
 be marked as not a product. Generated PDFs live under `release/` and are not
