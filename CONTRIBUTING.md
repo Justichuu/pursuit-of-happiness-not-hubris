@@ -1,5 +1,14 @@
 # Contributing
 
+## Two ways in
+
+Add your row to [CONTRIBUTORS.md](CONTRIBUTORS.md) in a pull request. A
+**writing voice** may open passages in the book. An **attribution** writes
+nothing and is owed credit anyway. Both are complete ways to be here.
+
+Exact quotations go in [QUOTES.md](QUOTES.md). The rules for both live in those
+files and are not restated here, so there is only one copy of each to keep true.
+
 ## Current status
 
 Pull-request proposals are open for corrections, accessibility work, prose,
@@ -42,6 +51,12 @@ contributor's copyright or create a debt.
 - A quotation must preserve exact wording, speaker, source, and visible cuts.
 - AI assistance must be disclosed. Generated text is never evidence that a fact
   is true or that a person consented.
+- Voices stay separated. In a chapter that declares separated voices, every
+  passage carries a voice marker, generated text never appears inside a
+  Justichuu block, and a slot reserved for him is left unwritten rather than
+  drafted for him. See [VOICES.md](VOICES.md).
+- Corrections to a Justichuu passage are proposed in review for him to apply,
+  not edited in place by a contributor or a tool.
 - Accessibility and plain-language corrections are part of editorial quality.
 - No copied characters, trade dress, lyrics, samples, or other protected work.
 
