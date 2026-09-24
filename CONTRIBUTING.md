@@ -1,5 +1,14 @@
 # Contributing
 
+## Two ways in
+
+Add your row to [CONTRIBUTORS.md](CONTRIBUTORS.md) in a pull request. A
+**writing voice** may open passages in the book. An **attribution** writes
+nothing and is owed credit anyway. Both are complete ways to be here.
+
+Exact quotations go in [QUOTES.md](QUOTES.md). The rules for both live in those
+files and are not restated here, so there is only one copy of each to keep true.
+
 ## Current status
 
 Pull-request proposals are open for corrections, accessibility work, prose,
