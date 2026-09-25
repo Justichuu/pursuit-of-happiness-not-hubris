@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "candidate_id": "CG-0001",
+  "revision": 1,
+  "recorded_at": "2026-08-27T00:00:00Z",
+  "source_id": "src-replace-with-imported-source-id",
+  "speaker": "AI assistant",
+  "state": "Needs-context",
+  "ranges": [
+    [0, 12]
+  ],
+  "sensitive_spans": [],
+  "redactions": [],
+  "public_source": "Private conversation, reviewed excerpt",
+  "public_source_date": "2026-08-27",
+  "public_context": "",
+  "reviewer_notes": "Private notes stay out of generated output."
+}

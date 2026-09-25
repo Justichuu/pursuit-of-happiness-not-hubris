@@ -1,0 +1,15 @@
+# Nothing under these paths is safe to publish by default.
+private/
+dist/
+.mined/
+.smelt/
+.refined/
+.build/
+src/bin/
+src/obj/
+src/*/bin/
+src/*/obj/
+*.exe
+*.preview.html
+__pycache__/
+tests/__pycache__/
