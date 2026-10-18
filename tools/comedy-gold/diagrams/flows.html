@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comedy Gold miner pictures</title>
+<style>
+  :root { --ink:#120c14; --paper:#fff8ee; --bean:#f4b4c8; --soil:#e07a5f; --leaf:#7d9b76; }
+  html,body { margin:0; background:var(--paper); color:var(--ink); font:18px/1.45 Georgia, serif; }
+  body { max-width:52rem; margin:0 auto; padding:1.2rem 1rem 3rem; }
+  h1,h2 { font-weight:600; }
+  h1 { font-size:1.8rem; }
+  h2 { font-size:1.25rem; margin-top:2rem; }
+  p,li { max-width:42rem; }
+  .note { border-left:4px solid var(--ink); padding:.2rem 0 .2rem .8rem; }
+  svg { width:100%; height:auto; display:block; margin:1rem 0; }
+  .box { fill:#fffdf8; stroke:var(--ink); stroke-width:2; }
+  .gold { fill:#f3d37a; }
+  .soil { fill:var(--soil); }
+  .leaf { fill:var(--leaf); }
+  .bean { fill:var(--bean); }
+  .skip { fill:#d9d4cc; }
+  text { font-family:Georgia,serif; fill:var(--ink); font-size:13px; }
+  .t { font-size:15px; font-weight:700; }
+  .small { font-size:11px; }
+  a { color:var(--ink); }
+</style>
+</head>
+<body>
+<h1>Pictures for the miner</h1>
+<p>Four pictures. The miner is the shovel. All metal goes to the smelter next.</p>
+<p class="note">The miner does not sell tools, does not publish the book, and does not pay anyone.</p>
+
+<h2>1. Your house</h2>
+<p>People either buy a tool and keep it, or give an idea. If they help build your house and the idea is decent and people work on it, they can get paid later.</p>
+<svg viewBox="0 0 720 260" role="img" aria-labelledby="house-title house-desc">
+  <title id="house-title">Buy a tool or give an idea</title>
+  <desc id="house-desc">Two paths: buy a ChuuMind tool and keep it for your own house, or give a public idea that may later be paid if it helps ChuuMind.</desc>
+  <rect class="box" x="20" y="20" width="160" height="70" rx="8"/>
+  <text class="t" x="40" y="50">You (the house)</text>
+  <text class="small" x="40" y="72">chuumind.com shop</text>
+
+  <rect class="bean box" x="260" y="16" width="180" height="78" rx="8"/>
+  <text class="t" x="278" y="46">Buy a tool</text>
+  <text class="small" x="278" y="68">help my house, keep it</text>
+  <text class="small" x="278" y="84">to build yours</text>
+
+  <rect class="leaf box" x="260" y="130" width="180" height="78" rx="8"/>
+  <text class="t" x="278" y="160">Give an idea</text>
+  <text class="small" x="278" y="182">public. attribute if you can</text>
+  <text class="small" x="278" y="198">pay only if it helps ChuuMind</text>
+
+  <rect class="gold box" x="520" y="70" width="180" height="90" rx="8"/>
+  <text class="t" x="538" y="106">Their house</text>
+  <text class="small" x="538" y="128">same tools, their project</text>
+  <text class="small" x="538" y="146">or a share later</text>
+
+  <line x1="180" y1="55" x2="260" y2="55" stroke="#120c14" stroke-width="2"/>
+  <line x1="180" y1="55" x2="260" y2="169" stroke="#120c14" stroke-width="2"/>
+  <line x1="440" y1="55" x2="520" y2="115" stroke="#120c14" stroke-width="2"/>
+  <line x1="440" y1="169" x2="520" y2="115" stroke="#120c14" stroke-width="2"/>
+</svg>
+
+<h2>2. Mine, then you pick</h2>
+<p>The flag <code>.ideamine</code> sits next to Comedy Gold. Scan looks. Mine sorts. All metal then goes to <code>.smelt</code>. You still say yes before a line goes in the book.</p>
+<svg viewBox="0 0 720 280" role="img" aria-labelledby="mine-title mine-desc">
+  <title id="mine-title">Scan then mine then approve</title>
+  <desc id="mine-desc">ideas folder to scan to mined piles. Lead is skipped. You approve before the book.</desc>
+  <rect class="box" x="16" y="90" width="120" height="64" rx="8"/>
+  <text class="t" x="32" y="118">ideas/</text>
+  <text class="small" x="32" y="138">raw notes</text>
+
+  <rect class="bean box" x="168" y="90" width="120" height="64" rx="8"/>
+  <text class="t" x="186" y="118">Scan</text>
+  <text class="small" x="186" y="138">look only</text>
+
+  <rect class="soil box" x="320" y="90" width="120" height="64" rx="8"/>
+  <text class="t" x="338" y="118">Mine</text>
+  <text class="small" x="338" y="138">write .mined</text>
+
+  <rect class="gold box" x="472" y="20" width="110" height="48" rx="8"/>
+  <text class="t" x="490" y="50">gold first</text>
+  <rect class="box" x="472" y="78" width="110" height="40" rx="8"/>
+  <text x="490" y="104">silver</text>
+  <rect class="leaf box" x="472" y="128" width="110" height="40" rx="8"/>
+  <text x="490" y="154">copper / tin</text>
+  <rect class="box" x="472" y="178" width="110" height="36" rx="8"/>
+  <text x="490" y="202">dirt last</text>
+  <rect class="skip box" x="472" y="222" width="110" height="36" rx="8"/>
+  <text x="490" y="246">lead skip</text>
+
+  <rect class="soil box" x="610" y="90" width="96" height="64" rx="8"/>
+  <text class="t" x="622" y="118">.smelt</text>
+  <text class="small" x="622" y="138">all metal next</text>
+
+  <line x1="136" y1="122" x2="168" y2="122" stroke="#120c14" stroke-width="2"/>
+  <line x1="288" y1="122" x2="320" y2="122" stroke="#120c14" stroke-width="2"/>
+  <line x1="440" y1="122" x2="472" y2="122" stroke="#120c14" stroke-width="2"/>
+  <line x1="582" y1="122" x2="610" y2="122" stroke="#120c14" stroke-width="2"/>
+</svg>
+
+<h2>3. What is not this shovel</h2>
+<svg viewBox="0 0 720 180" role="img" aria-labelledby="not-title not-desc">
+  <title id="not-title">Shop pay miner and lead safe are different</title>
+  <desc id="not-desc">chuumind.com is the shop. The miner is the shovel. ChuuPay is later pay. The lead safe is the existing Novel Vault.</desc>
+  <rect class="bean box" x="20" y="40" width="150" height="80" rx="8"/>
+  <text class="t" x="36" y="74">chuumind.com</text>
+  <text class="small" x="36" y="96">shop and letters</text>
+
+  <rect class="gold box" x="200" y="40" width="150" height="80" rx="8"/>
+  <text class="t" x="216" y="74">This miner</text>
+  <text class="small" x="216" y="96">book idea piles</text>
+
+  <rect class="skip box" x="380" y="40" width="150" height="80" rx="8"/>
+  <text class="t" x="396" y="74">ChuuPay</text>
+  <text class="small" x="396" y="96">later. not here</text>
+
+  <rect class="skip box" x="550" y="40" width="150" height="80" rx="8"/>
+  <text class="t" x="566" y="74">Lead safe</text>
+  <text class="small" x="566" y="96">Novel Vault already here</text>
+</svg>
+
+<p>Double-click <code>Mine.bat</code> in the Comedy Gold folder. Piles land in <code>.mined</code>.</p>
+</body>
+</html>
