@@ -1,0 +1,8 @@
+note Pursuit-of-Happiness-over-Hubris proof: witness-minus-hubris balance and hubris debt cancellation
+step balance is witnessed_work minus hubris_claim
+step after_proof is balance plus hubris_claim
+step hubris_debt is 0 minus hubris_claim
+step cleared_debt is hubris_debt plus hubris_claim
+claim after_proof same as witnessed_work
+claim cleared_debt same as 0
+note [W] Pursuit-of-Happiness-over-Hubris proves supplying witness equal to hubris_claim cancels hubris debt to 0 and recovers witnessed_work, with 2 claims settled true and 0 failed.
